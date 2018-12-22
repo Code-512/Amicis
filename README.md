@@ -25,3 +25,4 @@ Both service providers and service seekers will be able to see previous services
 + Service seekers and service providers could receive ratings based upon their experiences. 
 + Background checks for service providers. 
 + Service seekers may suggest a service needed. 
++ Service providers will be able to review their ratings and modify their profiles. 
