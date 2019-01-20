@@ -18,7 +18,7 @@ class Login extends React.Component {
         })
     }
     handleSubmit = () => {
-    axios.get('http://localhost:8000/login', {
+    axios.get('/login', {
         params: 
             {name: this.state.name, password: this.state.password }
       })
