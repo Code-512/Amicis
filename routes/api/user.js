@@ -1,3 +1,6 @@
+const router = require("express").Router();
+
+
 app.get('/login', (req, res)=> {
     console.log("Finding details");
     console.log(req.query);
@@ -5,3 +8,5 @@ app.get('/login', (req, res)=> {
     res.send(results)
     })
 })
+
+module.exports = router;
