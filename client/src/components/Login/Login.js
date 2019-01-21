@@ -23,8 +23,9 @@ class Login extends React.Component {
             {name: this.state.name, password: this.state.password }
       })
       .then( response => {
-        // console.log(response.data[0])
+        console.log(response.data[0])
         this.setState({userDetails: response.data[0]})
+        console.log(response)
       })
       .catch(error => {
         console.log(error);
@@ -49,7 +50,9 @@ class Login extends React.Component {
             <button onClick={this.handleSubmit}>Login</button>
 
             <a href="/registration"> Need an account? </a>
+
             <div>
+
             { this.state.userDetails.name ? <h1> Hi {this.state.userDetails.name}</h1> : <div>You need to Login!</div>}
 
             </div>
