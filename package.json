@@ -1,7 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Amichi app connects service providers with those seeking services.  Rather than just connect services, howerever, Amici also schedules and provides payment service options.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -23,8 +23,16 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-512/Amicis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Code-512/Amicis/issues"
+  },
+  "homepage": "https://github.com/Code-512/Amicis#readme"
 }

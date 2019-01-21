@@ -23,7 +23,7 @@ class Login extends React.Component {
             {name: this.state.name, password: this.state.password }
       })
       .then( response => {
-        console.log(response.data[0])
+        // console.log(response.data[0])
         this.setState({userDetails: response.data[0]})
       })
       .catch(error => {
