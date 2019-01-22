@@ -6,32 +6,36 @@ class Gas extends React.Component {
         gaslist: ''
     };
     componentDidMount(){
-      console.log('hello');
-        // this.props.lat
-        // this.props.long
-        axios.get('http://api.mygasfeed.com/stations/radius/30.394217/-97.833953/20/reg/price/esmbi7wobr.json?')
-        .then(function (data) {
-          // handle success
-        //   console.log(response);
-              this.setState({
-                      gaslist: data
-                  })
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
-        .then(function () {
-          // always executed
-          console.log("All done")
-        });
         
+            console.log('hello');
+              // this.props.lat
+              // this.props.long
+              axios.get('https://api.mygasfeed.com/stations/radius/30.394217/-97.833953/20/reg/price/esmbi7wobr.json?')
+              .then( (data) => {
+                // handle success
+              //   console.log(response);
+                    this.setState({
+                            gaslist: data
+                        })
+              })
+              .catch( (error) =>{
+                // handle error
+                console.log(error);
+              })
+              .then( ()=> {
+                // always executed
+                console.log("All done")
+              });
+            }
+    
+
+    render() {
+        return(<div>
+           SOMETHINGS
+        </div>)
     }
-        render(){
-            return(<div>
-                SOMETHING
-            </div>)
-        }
-    }
+}
+
+    
 
 export default Gas;
