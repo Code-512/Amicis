@@ -29,7 +29,7 @@ class Gas extends React.Component {
     }
         render(){
             return(<div>
-                
+                SOMETHING
             </div>)
         }
     }
