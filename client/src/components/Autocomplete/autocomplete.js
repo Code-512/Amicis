@@ -10,44 +10,50 @@ import {
 
 class Contents extends Component {
   state = {
-    position: null,
+    positionOrigin: null,
+    positionDestination: null,
     redirect: false
    
   };
-  // handleGo = ()=> {
-  //   //redirect
-  //   this.setState({
-  //     redirect: true
-  //   })
-  // }
-  // redirect = () => {
-  //   if(this.state.redirect){
-  //     return <Redirect to= {{ pathname: '/results', state: {position: this.state.position}}}/>
-  //   }
-  // }
+  handleGo = ()=> {
+    //redirect
+    this.setState({
+      redirect: true
+    })
+  }
+  redirect = () => {
+    if(this.state.redirect){
+      return <Redirect to= {{ pathname: '/results', state: {position: this.state.position}}}/>
+    } 
+  }
 
   componentDidMount() {
-    this.renderAutoComplete();
+    this.renderAutoCompOrigin();
+    this.renderAutoCompDest();
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props !== prevProps.map) this.renderAutoComplete();
+    if (this.props !== prevProps.map) this.renderAutoCompOrigin();
+    if (this.props !== prevProps.map) this.renderAutoCompDest();
   }
 
   onSubmit(e) {
     e.preventDefault();
   }
 
-  renderAutoComplete() {
+  renderAutoCompOrigin() {
     const { google, map } = this.props;
+    console.log(this.props);
 
     if (!google || !map) return;
 
-    const autocomplete = new google.maps.places.Autocomplete(this.autocomplete);
-    autocomplete.bindTo('bounds', map);
+    const autocompOrigin = new google.maps.places.Autocomplete(
+      this.autocompOrigin
+    );
+    autocompOrigin.bindTo("bounds", map);
 
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
+    autocompOrigin.addListener("place_changed", () => {
+      const place = autocompOrigin.getPlace();
 
       if (!place.geometry) return;
 
@@ -57,34 +63,75 @@ class Contents extends Component {
         map.setZoom(17);
       }
 
-      this.setState({ position: place.geometry.location });
+      this.setState({ positionOrigin: place.geometry.location });
+    });
+  }
+
+  renderAutoCompDest() {
+    const { google, map } = this.props;
+    console.log(this.props);
+
+    if (!google || !map) return;
+
+    const autocompdest = new google.maps.places.Autocomplete(this.autocompdest);
+    autocompdest.bindTo("bounds", map);
+
+    autocompdest.addListener("place_changed", () => {
+      const place = autocompdest.getPlace();
+
+      if (!place.geometry) return;
+
+      if (place.geometry.viewport) map.fitBounds(place.geometry.viewport);
+      else {
+        map.setCenter(place.geometry.location);
+        map.setZoom(17);
+      }
+
+      this.setState({ positionDestination: place.geometry.location });
+      console.log(place.geometry.location)
     });
   }
 
   render() {
-    const { position } = this.state;
+    const { positionOrigin } = this.state;
+    const { positionDestination } = this.state;
 
     return (
       <div className={styles.flexWrapper}>
-      {/* {this.redirect()} */}
-        <div className={styles.left}>
-          <form onSubmit={this.onSubmit}>
-            <input
-              placeholder="Enter a location"
-              ref={ref => (this.autocomplete = ref)}
-              type="text"
-            />
+      {this.redirect()}
+      <div className={styles.left}>
+            <form onSubmit={this.onSubmit}>
+              <input
+                placeholder="Enter a location"
+                ref={ref => (this.autocompOrigin = ref)}
+                type="text"
+              />
+              <input className={styles.button} type="submit" value="Go" />
+            </form>
 
-            <input className={styles.button} type="submit" onClick={this.handleGo} value="Go" />
-          </form>
-
-          <div>
-            <div>Lat: {position && position.lat()}</div>
-            <div>Lng: {position && position.lng()}</div>
+            <div>
+              <div>Lat: {positionOrigin && positionOrigin.lat()}</div>
+              <div>Lng: {positionOrigin && positionOrigin.lng()}</div>
+            </div>
           </div>
-        </div>
+          <div className={styles.flexWrapper}>
+            <div className={styles.left}>
+              <form onSubmit={this.onSubmit}>
+                <input
+                  placeholder="Enter a location"
+                  ref={ref => (this.autocompdest = ref)}
+                  type="text"
+                />
+                <input className={styles.button} type="submit" value="Go" />
+              </form>
 
-        <div className={styles.right}>
+              <div>
+                <div>Lat: {positionDestination && positionDestination.lat()}</div>
+                <div>Lng: {positionDestination && positionDestination.lng()}</div>
+              </div>
+            </div>
+
+            <div className={styles.right}>
           <Map
             {...this.props}
             center={position}

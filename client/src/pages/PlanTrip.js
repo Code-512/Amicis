@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import MapWrapper from '../components/Autocomplete/autocomplete';
-import Gas from "../components/Gas/gas";
+
 
 function PlanTrip() {
   return (
@@ -10,8 +10,6 @@ function PlanTrip() {
           <Jumbotron>
             <h1>THIS WILL BE PLAN TRIP PAGE</h1>
             <MapWrapper />
-            <Gas />
-            {/* <gasApi lat="234234" long='23434234' /> */}
           </Jumbotron>
     </Container>
   );
