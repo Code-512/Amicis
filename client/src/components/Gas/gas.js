@@ -13,10 +13,11 @@ class Gas extends React.Component {
               axios.get('http://api.mygasfeed.com/stations/radius/30.394217/-97.833953/20/reg/price/esmbi7wobr.json?')
               .then( (data) => {
                 // handle success
-              //   console.log(response);
+                console.log("data", data);
                     this.setState({
                             gaslist: data
                         })
+                        
               })
               .catch( (error) =>{
                 // handle error
@@ -29,13 +30,42 @@ class Gas extends React.Component {
             }
     
 
-    render() {
-        return(<div>
-           SOMETHINGS
-        </div>)
-    }
-}
 
-    
+            render() {
+                return (
+                  <div>HI</div>
+                );
+              }
+             }    
 
 export default Gas;
+
+
+// import React from 'react';
+// import axios from 'axios'
+
+// class Gas extends React.Component {
+    
+//       state = {
+//         persons: []
+//       }
+    
+//       componentDidMount() {
+//         axios.get(`https://jsonplaceholder.typicode.com/users`)
+//           .then(res => {
+//             const persons = res.data;
+//             this.setState({ persons });
+//           })
+         
+//       }
+    
+//       render() {
+//         return (
+//           <ul>
+//             { this.state.persons.map(person => <li>{person.name}</li>)}
+//           </ul>
+//         )
+//       }
+//     }
+
+// export default Gas;
