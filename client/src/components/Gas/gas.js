@@ -26,7 +26,7 @@ class Gas extends React.Component {
           console.log("All done")
         });
         
-    render(){
+    render()
         return(<div>
             
         </div>)
