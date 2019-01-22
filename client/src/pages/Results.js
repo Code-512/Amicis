@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
-import Gas from "../utils/gas";
+import Gas from "../components/Gas/gas";
 
 function Results() {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import MapWrapper from '../components/Autocomplete/autocomplete';
-import Gas from "../utils/gas";
+import Gas from "../components/Gas/gas";
 
 function PlanTrip() {
   return (
