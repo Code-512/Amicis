@@ -12,7 +12,7 @@ class Gas extends React.Component {
         axios.get('http://api.mygasfeed.com/stations/radius/30.394217/-97.833953/20/reg/price/esmbi7wobr.json?')
         .then(function (data) {
           // handle success
-          console.log(response);
+        //   console.log(response);
               this.setState({
                       gaslist: data
                   })
