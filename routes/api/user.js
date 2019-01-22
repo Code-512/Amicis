@@ -9,8 +9,12 @@ const userController = require("../../controllers/usersController");
 //     })
 // })
 
-router.route('/')
-    .get(userController.findAll);
+router.route('/login')
+    .get(userController.find);
+
+router.route('/register')
+      .post(userController.create);
+
     
 
 module.exports = router;

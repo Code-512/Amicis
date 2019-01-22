@@ -4,7 +4,9 @@ import axios from 'axios';
 
 class Login extends React.Component {
     state  = {
-        name: "",
+        firstName: "",
+        lastName: "",
+        email: "",
         password: "",
         userDetails: {
             
@@ -18,9 +20,9 @@ class Login extends React.Component {
         })
     }
     handleSubmit = () => {
-    axios.get('/api/login', {
+    axios.get('/api/user/login', {
         params: 
-            {name: this.state.name, password: this.state.password }
+            {email: this.state.name, password: this.state.password }
       })
       .then( response => {
         console.log(response.data[0])
