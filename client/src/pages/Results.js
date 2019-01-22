@@ -3,6 +3,7 @@ import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
+import Air from "../components/Air/air";
 
 function Results() {
   return (
@@ -12,6 +13,7 @@ function Results() {
           </Jumbotron>
           <Map />
           <Gas />
+          <Air />
     </Container>
   );
 }

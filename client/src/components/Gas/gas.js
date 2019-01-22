@@ -7,13 +7,13 @@ class Gas extends React.Component {
     };
     componentDidMount(){
         
-            console.log('hello');
+            console.log('hello from gas api');
               // this.props.lat
               // this.props.long
               axios.get('http://api.mygasfeed.com/stations/radius/30.394217/-97.833953/20/reg/price/esmbi7wobr.json?')
               .then( (data) => {
                 // handle success
-                console.log("data", data);
+                console.log("data from gas api", data);
                     this.setState({
                             gaslist: data
                         })
@@ -25,7 +25,7 @@ class Gas extends React.Component {
               })
               .then( ()=> {
                 // always executed
-                console.log("All done")
+                console.log("All done from gas api")
               });
             }
     
@@ -33,7 +33,10 @@ class Gas extends React.Component {
 
             render() {
                 return (
-                  <div>HI</div>
+                  <div>GAS</div>
+
+
+
                 );
               }
              }    
@@ -61,6 +64,7 @@ export default Gas;
     
 //       render() {
 //         return (
+//             <div>HI</div>
 //           <ul>
 //             { this.state.persons.map(person => <li>{person.name}</li>)}
 //           </ul>
