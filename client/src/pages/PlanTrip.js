@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import MapWrapper from '../components/Autocomplete/autocomplete';
+// import MapWrapper from '../components/Autocomplete/autocomplete';
 
 
 function PlanTrip() {
@@ -9,8 +9,9 @@ function PlanTrip() {
     <Container fluid>
           <Jumbotron>
             <h1>THIS WILL BE PLAN TRIP PAGE</h1>
-            <MapWrapper />
+            
           </Jumbotron>
+          {/* <MapWrapper /> */}
     </Container>
   );
 }
