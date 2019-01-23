@@ -12,7 +12,7 @@ function Results() {
             <h1>Results</h1>
           </Jumbotron>
           <Map />
-          <Gas lat={5} lng={10}/>
+          <Gas lat={40.741895} lng={-73.989308}/>
           <Air />
     </Container>
   );
