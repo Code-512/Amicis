@@ -2,46 +2,120 @@ import React from 'react';
 import axios from 'axios'
 
 class Gas extends React.Component {
-    state = {
-        gaslist: ''
-    };
-    componentDidMount(){
-        
-            console.log('hello from gas api');
-              // this.props.lat
-              // this.props.long
-              axios.get('http://api.mygasfeed.com/stations/radius/30.394217/-97.833953/20/reg/price/esmbi7wobr.json?')
-              .then( (data) => {
-                // handle success
-                console.log("data from gas api", data);
-                    this.setState({
-                            gaslist: data
-                        })
-                        
+  state = {
+      gaslist: ''
+  };
+
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount(){
+      
+    console.log('hello from gas api');
+    axios.get(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
+    .then( (data) => {
+      // handle success
+      
+          this.setState({
+                  gaslist: data
               })
-              .catch( (error) =>{
-                // handle error
-                console.log(error);
-              })
-              .then( ()=> {
-                // always executed
-                console.log("All done from gas api")
-              });
-            }
+              console.log("data from gas api", data);        
+    })
+    .catch( (error) =>{
+      // handle error
+      console.log(error);
+    })
+    .then( ()=> {
+      // always executed
+      
+    });
+  }
     
 
 
-            render() {
-                return (
-                  <div>GAS</div>
+  render() {
+      return (
+        <div>
+          GAS
+        {this.state.gaslist && this.state.gaslist.data.stations.map( (station, index) => { 
+          if (index < 5 ) {
+          return (
+            <div>
+            <p>Station: {station.station} </p>
+            <p>City: {station.city}</p>
+            <p>Distance: {station.distance}</p>
+            <p>Cost: {station.reg_price}</p>
+            </div>
+          ) 
+        }
+        })}
+      
+        </div>
 
-
-
-                );
-              }
-             }    
+      );
+    }
+}    
 
 export default Gas;
+
+
+
+/// SANDBOX  
+
+// import React from 'react';
+// import axios from 'axios'
+
+// class Gas extends React.Component {
+//     state = {
+//         gaslist: ''
+//     };
+//     componentDidMount(){
+//       console.log('hello from gas api');  
+      
+//       function buildGasURL(lat, lng) {
+
+//             lat = 30.394217
+//             lng = -97.833953
+            
+//               //lat = this.props.lat
+//               // lgn = this.props.lng
+
+//               axios.get('http://api.mygasfeed.com/stations/radius/' + lat + "/" + long + "/5/reg/price/esmbi7wobr.json?')
+//               .then( (data) => {
+//                 // handle success
+//                 console.log("data from gas api", data);
+//                     this.setState({
+//                             gaslist: data
+//                         })
+                        
+//               })
+//               .catch( (error) =>{
+//                 // handle error
+//                 console.log(error);
+//               })
+//               .then( ()=> {
+//                 // always executed
+//                 console.log("All done from gas api")
+//               });
+            
+
+
+//             render() {
+//                 return (
+//                   <div>GAS</div>
+
+
+
+//                 );
+//               }
+//             }
+//           }
+//         }                
+
+// export default Gas;
+
+// ?????????????????????????????????
 
 
 // import React from 'react';

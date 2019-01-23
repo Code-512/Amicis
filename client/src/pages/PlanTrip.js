@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import DatePickers from "../components/Datepicker/datepicker"
-// import MapWrapper from '../components/Autocomplete/autocomplete';
+import MapWrapper from '../components/Autocomplete/autocomplete';
 
 
 function PlanTrip() {
@@ -13,7 +13,7 @@ function PlanTrip() {
             
           </Jumbotron>
           <DatePickers />
-          {/* <MapWrapper /> */}
+          <MapWrapper />
     </Container>
   );
 }
