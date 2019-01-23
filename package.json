@@ -26,6 +26,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "google-maps-react": "^2.0.2",
+    "iatacodes": "^7.0.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
     "prop-types": "^15.6.2",
