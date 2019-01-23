@@ -18,6 +18,7 @@ class Login extends React.Component {
         this.setState({ 
             [name]: value
         })
+        console.log(event.target)
     }
     handleSubmit = () => {
     axios.get('/api/user/login', {
@@ -39,9 +40,9 @@ class Login extends React.Component {
         return (
         <div>
 
-            <input placeholder="username" 
-            value={this.state.name}
-            name="name"
+            <input placeholder="email" 
+            value={this.state.email}
+            name="email"
             onChange={this.handleChange}/>
 
             <input placeholder="password" 
@@ -55,7 +56,7 @@ class Login extends React.Component {
 
             <div>
 
-            { this.state.userDetails.name ? <h1> Hi {this.state.userDetails.name}</h1> : <div>You need to Login!</div>}
+            { this.state.userDetails.firstName ? <h1> Hi {this.state.userDetails.firstName}</h1> : <div>You need to Login!</div>}
 
             </div>
         </div>
