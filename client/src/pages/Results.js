@@ -12,6 +12,7 @@ function Results() {
         <h1>Results</h1>
       </Jumbotron>
       <Map />
+
       <Row>
         <Col size="md-6">
           <Gas lat={30.2672} lng={-97.7431} />

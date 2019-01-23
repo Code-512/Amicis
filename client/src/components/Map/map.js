@@ -4,6 +4,7 @@ import  { compose, withProps, lifecycle } from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, DirectionsRenderer} from 'react-google-maps'
 
 
+
 class Map extends React.Component {
   constructor(props){
     super(props)
@@ -26,7 +27,9 @@ render() {
             //To access long and lat or position this.props.state.position
           DirectionsService.route({
             origin: new google.maps.LatLng(41.8507300, -87.6512600),
-            destination: new google.maps.LatLng(30.267153, -97.7430608),
+                        destination: new google.maps.LatLng(30.267153, -97.7430608),
+    //                     origin: this.props.origin,
+    // destination: this.props.destination,
             travelMode: google.maps.TravelMode.DRIVING,
           }, (result, status) => {
             if (status === google.maps.DirectionsStatus.OK) {
@@ -48,6 +51,7 @@ this.setState({
       </GoogleMap>
     );
 return (
+  
         <DirectionsComponent
         />
         

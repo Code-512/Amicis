@@ -14,7 +14,7 @@ updateLocation = (place) => {
   console.log('PLACE', place)
   this.setState({
     origin: place,
-    dest: place
+    destination: place
   });
 }
 
@@ -30,9 +30,11 @@ updateLocation = (place) => {
             <PlacesWithStandaloneSearchBox onLocationChange={this.updateLocation} placeholderText="Where ya startin'?" />
             <PlacesWithStandaloneSearchBox onLocationChange={this.updateLocation} placeholderText="Where ya goin'?" />
             {this.state.origin && 'origin:' + this.state.origin.formatted_address}
-            {this.state.dest && 'destination:' + this.state.dest.formatted_address}
+            {this.state.destination && 'destination:' + this.state.destination.formatted_address}
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
+            
+            
       </Container>
     );  
   }
