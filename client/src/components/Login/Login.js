@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Jumbotron from "../Jumbotron";
+import { Col, Row, Container } from "../Grid";
 
 
 class Login extends React.Component {
@@ -20,6 +22,7 @@ class Login extends React.Component {
         })
         console.log(event.target)
     }
+    
     handleSubmit = () => {
     axios.get('/api/user/login', {
         params: 
@@ -38,6 +41,11 @@ class Login extends React.Component {
 
     render(){
         return (
+            <Container fluid>
+              <Row>
+                <Col size="md-12">
+                 <Jumbotron>
+                </Jumbotron>
         <div>
 
             <input placeholder="email" 
@@ -60,6 +68,9 @@ class Login extends React.Component {
 
             </div>
         </div>
+            </Col>
+          </Row>
+        </Container>
         )
     }
 }
