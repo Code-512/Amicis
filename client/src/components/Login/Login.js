@@ -6,7 +6,9 @@ import { Col, Row, Container } from "../Grid";
 
 class Login extends React.Component {
     state  = {
-        name: "",
+        firstName: "",
+        lastName: "",
+        email: "",
         password: "",
         userDetails: {
             
@@ -18,16 +20,17 @@ class Login extends React.Component {
         this.setState({ 
             [name]: value
         })
+        console.log(event.target)
     };
-
     handleSubmit = () => {
-    axios.get('/login', {
+    axios.get('/api/user/login', {
         params: 
-            {name: this.state.name, password: this.state.password }
+            {email: this.state.name, password: this.state.password }
       })
       .then( response => {
         console.log(response.data[0])
         this.setState({userDetails: response.data[0]})
+        console.log(response)
       })
       .catch(error => {
         console.log(error);
@@ -44,9 +47,9 @@ class Login extends React.Component {
                 </Jumbotron>
         <div>
 
-            <input placeholder="username" 
-            value={this.state.name}
-            name="name"
+            <input placeholder="email" 
+            value={this.state.email}
+            name="email"
             onChange={this.handleChange}/>
 
             <input placeholder="password" 
@@ -57,8 +60,10 @@ class Login extends React.Component {
             <button onClick={this.handleSubmit}>Login</button>
 
             <a href="/registration"> Need an account? </a>
+
             <div>
-            { this.state.userDetails.name ? <h1> Hi {this.state.userDetails.name}</h1> : <div>You need to Login!</div>}
+
+            { this.state.userDetails.firstName ? <h1> Hi {this.state.userDetails.firstName}</h1> : <div>You need to Login!</div>}
 
             </div>
         </div>

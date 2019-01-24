@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from 'axios';
 
 import "./style.css";
 
@@ -54,12 +55,24 @@ class Registration extends React.Component {
   };
 
   handleSubmit = evt => {
+    console.log('handle submit')
+    evt.preventDefault()
+  
     if (!this.canBeSubmitted()) {
       evt.preventDefault();
       return;
     }
     const { email, password } = this.state;
     alert(`Signed up with email: ${email} password: ${password}`);
+    const newUser = {
+      email: this.state.email,
+      password: this.state.password,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName
+    }
+    axios.post('/api/user/register', newUser).then(response => {
+      console.log(response);
+    })
   };
 
   canBeSubmitted() {
@@ -80,7 +93,7 @@ class Registration extends React.Component {
     };
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form >
         <input
           className={shouldMarkError("email") ? "error" : ""}
           type="text"
@@ -113,13 +126,12 @@ class Registration extends React.Component {
           onChange={this.handleLastNameChange}
           onBlur={this.handleBlur("lastName")}
         />
-        <button disabled={isDisabled}>Sign up</button>
+        <button onClick={this.handleSubmit}>Sign up</button>
       </form>
     );
   }
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Registration />, rootElement);
+
 
 export default Registration
