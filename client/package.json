@@ -10,12 +10,7 @@
     "react-router-dom": "^4.3.1",
     "axios": "^0.18.0"
   },
-  "devDependencies": {
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
-    "react-scripts": "1.1.5",
-    "react-test-renderer": "^16.7.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -30,7 +25,6 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
