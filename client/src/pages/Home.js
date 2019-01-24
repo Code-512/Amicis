@@ -1,8 +1,10 @@
 import React from 'react';
+import Footer from '../components/Footer'
 // import Container from "../components/Container"
 // import Jumbotron from "../Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import Hero from '../components/Hero';
+import Middle from '../components/Middle';
 
 function Home() {
     return (
@@ -19,7 +21,8 @@ function Home() {
                 
                 </Col>
               </Row>
-
+              <Middle />
+            <Footer />
         </div>
     )
 }
