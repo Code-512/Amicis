@@ -4,7 +4,8 @@ import Jumbotron from "../components/Jumbotron";
 import Submit from "../components/SubmitButton/submit"
 import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
-import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import myDatePicker from "../components/DP/dp";
 // import queryString from 'query-string'
 
 class PlanTrip extends Component {
@@ -39,6 +40,7 @@ datePickerReceipt() {
               <h1>THIS WILL BE PLAN TRIP PAGE</h1>
               
             </Jumbotron>
+          {/* <myDatePicker /> */}
             <Submit onClick={this.sendSubmitButton}/>
             <DatePickers 
             calendarDate={this.getDate}
@@ -59,12 +61,16 @@ datePickerReceipt() {
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
        
-            <Route path="/results" component={PlacesWithStandaloneSearchBox } />
+            <Link to={`/results?origin=${this.state.origin}&destination=${this.state.destination}&date=${this.state.date}`}>
+                     <button>plan trip</button>
+              </Link>
       </Container>
       
     );  
   }
 }
+
+
   
 
 export default PlanTrip;
