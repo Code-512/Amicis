@@ -5,7 +5,7 @@ import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
 
-function Results() {
+function Results(props) {
   return (
     <Container fluid>
       <Jumbotron>
