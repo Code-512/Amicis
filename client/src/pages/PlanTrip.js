@@ -16,21 +16,27 @@ updateLocation = (place) => {
     origin: place,
     destination: place
   });
-}
+};
 
-getOrigin = (place) => {
-  console.log('PLACE', place)
+getDate = (date) => {
+  console.log('date', date)
   this.setState({
-    origin: place
+    calendar: date
   });
-}
+};
 
-getDestination = (place) => {
-  console.log('PLACE', place)
-  this.setState({
-    destination: place
-  });
-}
+// Commenting this out. updateLocation should be what we need. 
+// getOrigin = (place) => {
+//   this.setState({
+//     origin: place
+//   });
+// }
+
+// getDestination = (place) => {
+//   this.setState({
+//     destination: place
+//   });
+// }
 
 // put function here for location information
 // pass information down to the map, etc. 
@@ -47,11 +53,20 @@ getDestination = (place) => {
               <h1>THIS WILL BE PLAN TRIP PAGE</h1>
               
             </Jumbotron>
-            <DatePickers />
-            <PlacesWithStandaloneSearchBox getOrigin={this.getOrigin}/>
-            <PlacesWithStandaloneSearchBox getDestination={this.getDestination}/>
-            <PlacesWithStandaloneSearchBox onLocationChange={this.updateLocation} placeholderText="Where ya startin'?" />
-            <PlacesWithStandaloneSearchBox onLocationChange={this.updateLocation} placeholderText="Where ya goin'?" />
+            <DatePickers 
+            calendarDate={this.getDate}
+            />
+            {/* <PlacesWithStandaloneSearchBox getOrigin={this.updateLocation}/>
+            <PlacesWithStandaloneSearchBox getDestination={this.updateLocation}/> */}
+            <PlacesWithStandaloneSearchBox 
+            getOrigin={this.updateLocation}
+            onLocationChange={this.updateLocation} 
+            placeholderText="Where ya startin'?" />
+            <PlacesWithStandaloneSearchBox 
+            getDestination={this.updateLocation}
+            onLocationChange={this.updateLocation} 
+            placeholderText="Where ya goin'?" />
+
             {this.state.origin && 'origin:' + this.state.origin.formatted_address}
             {this.state.destination && 'destination:' + this.state.destination.formatted_address}
             
