@@ -23,6 +23,14 @@ function Nav() {
          </li>
          <li className="nav-item">
            <Link
+             to="/login"
+             className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
+           >
+             Login
+           </Link>
+         </li>
+         <li className="nav-item">
+           <Link
              to="/plan"
              className={window.location.pathname === "/plan" ? "nav-link active" : "nav-link"}
            >
@@ -31,10 +39,10 @@ function Nav() {
          </li>
          <li className="nav-item">
            <Link
-             to="/login"
-             className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
+             to="/results"
+             className={window.location.pathname === "/results" ? "nav-link active" : "nav-link"}
            >
-             Login
+             Results
            </Link>
          </li>
        </ul>
