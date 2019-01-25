@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/triparound");
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/triparound");
 // mongoose.connect('mongodb://localhost:27017/triparound', { useNewUrlParser: true }, function(err){
 //     if(err) throw err
 
