@@ -23,10 +23,10 @@ function Nav() {
          </li>
          <li className="nav-item">
            <Link
-             to="/discover"
-             className={window.location.pathname === "/discover" ? "nav-link active" : "nav-link"}
+             to="/plan"
+             className={window.location.pathname === "/plan" ? "nav-link active" : "nav-link"}
            >
-             Discover
+             Plan
            </Link>
          </li>
          <li className="nav-item">

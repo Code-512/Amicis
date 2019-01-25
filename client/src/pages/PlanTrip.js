@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import ContainedButtons from "../components/SubmitButton/submitButton"
+import Submit from "../components/SubmitButton/submit"
 import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
 import { Route } from "react-router-dom";
@@ -28,26 +28,8 @@ getDate = (date) => {
   });
 };
 
-// Commenting this out. updateLocation should be what we need. 
-// getOrigin = (place) => {
-//   this.setState({
-//     origin: place
-//   });
-// }
-
-// getDestination = (place) => {
-//   this.setState({
-//     destination: place
-//   });
-// }
-
-// put function here for location information
-// pass information down to the map, etc. 
-// hold in state at parent level
-// pass as props to children
-
-
-
+sendSubmitButton() {
+}
 
   render() {
     return (
@@ -56,7 +38,7 @@ getDate = (date) => {
               <h1>THIS WILL BE PLAN TRIP PAGE</h1>
               
             </Jumbotron>
-            <ContainedButtons />
+            <Submit onClick={this.sendSubmitButton}/>
             <DatePickers 
             calendarDate={this.getDate}
             />
@@ -76,7 +58,7 @@ getDate = (date) => {
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
        
-            <Route path="/results" component={DatePickers} />
+            <Route path="/results" component={PlanTrip} />
       </Container>
       
     );  
