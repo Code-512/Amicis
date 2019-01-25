@@ -21,6 +21,7 @@ class Login extends React.Component {
             [name]: value
         })
         console.log(event.target)
+
     };
     handleSubmit = () => {
     axios.get('/api/user/login', {
