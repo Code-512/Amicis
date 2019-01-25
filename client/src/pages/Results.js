@@ -4,7 +4,6 @@ import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
-import MapWithADirectionsRenderer from "../components/Directions/directions"
 
 function Results(props) {
   return (
@@ -12,9 +11,7 @@ function Results(props) {
       <Jumbotron>
         <h1>Results</h1>
       </Jumbotron>
-      {/* <Map /> */}
-      <MapWithADirectionsRenderer />
-
+      <Map />
       <Row>
         <Col size="md-6">
           <Gas lat={30.2672} lng={-97.7431} />

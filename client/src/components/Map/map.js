@@ -31,6 +31,7 @@ render() {
               travelMode: google.maps.TravelMode.DRIVING,
           }, (result, status) => {
             if (status === google.maps.DirectionsStatus.OK) {
+              console.log('result', result)
 this.setState({
                 directions: {...result},
                 markers: true
