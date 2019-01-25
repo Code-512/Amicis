@@ -24,7 +24,7 @@ function DatePickers(props) {
         id="date"
         label="When ya goin'?"
         type="date"
-        defaultValue="2017-05-24"
+        defaultValue=""
         className={classes.textField}
         InputLabelProps={{
           shrink: true,

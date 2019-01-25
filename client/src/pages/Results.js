@@ -4,8 +4,10 @@ import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
+// import queryString from 'query-string'
 
 function Results(props) {
+  console.log(props);
   return (
     <Container fluid>
       <Jumbotron>

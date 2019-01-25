@@ -3,6 +3,8 @@ import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
+import { Route } from "react-router-dom";
+// import queryString from 'query-string'
 
 class PlanTrip extends Component {
   state = {
@@ -72,8 +74,9 @@ getDate = (date) => {
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
             
-            
+            <Route path="/results" component={PlanTrip} />
       </Container>
+      
     );  
   }
 }
