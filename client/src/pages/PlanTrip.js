@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import ContainedButtons from "../components/SubmitButton/submitButton"
 import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
 import { Route } from "react-router-dom";
@@ -55,6 +56,7 @@ getDate = (date) => {
               <h1>THIS WILL BE PLAN TRIP PAGE</h1>
               
             </Jumbotron>
+            <ContainedButtons />
             <DatePickers 
             calendarDate={this.getDate}
             />
@@ -73,8 +75,8 @@ getDate = (date) => {
             {this.state.destination && 'destination:' + this.state.destination.formatted_address}
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
-            
-            <Route path="/results" component={PlanTrip} />
+       
+            <Route path="/results" component={DatePickers} />
       </Container>
       
     );  

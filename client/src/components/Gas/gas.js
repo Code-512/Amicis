@@ -11,14 +11,11 @@ class Gas extends React.Component {
   }
 
   componentDidMount(){
-      
-    console.log('hello from gas api');
     axios.get(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
     .then( (data) => {
           this.setState({
                   gaslist: data
               })
-              console.log("data from gas api", data);        
     })
     .catch( (error) =>{
       console.log(error);
