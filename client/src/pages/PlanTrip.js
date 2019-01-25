@@ -28,7 +28,8 @@ getDate = (date) => {
   });
 };
 
-sendSubmitButton() {
+datePickerReceipt() {
+  return({DatePickers})
 }
 
   render() {
@@ -53,12 +54,12 @@ sendSubmitButton() {
             onLocationChange={this.updateLocation} 
             placeholderText="Where ya goin'?" />
 
-            {this.state.origin && 'origin:' + this.state.origin.formatted_address}
-            {this.state.destination && 'destination:' + this.state.destination.formatted_address}
+            {/* {this.state.origin && 'origin:' + this.state.origin.formatted_address} */}
+            {/* {this.state.destination && 'destination:' + this.state.destination.formatted_address} */}
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
        
-            <Route path="/results" component={PlanTrip} />
+            <Route path="/results" component={PlacesWithStandaloneSearchBox } />
       </Container>
       
     );  

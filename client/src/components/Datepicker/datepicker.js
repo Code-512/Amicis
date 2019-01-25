@@ -18,6 +18,12 @@ const styles = theme => ({
 function DatePickers(props) {
   const { classes } = props;
 
+    // this.setState({
+    //   date: [],
+    // });
+    // this.props.getDate(this.state.date)
+
+
   return (
     <form className={classes.container} noValidate>
       <TextField
