@@ -1,9 +1,15 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+// import Iata from '../Iata/iata';
+
+
+// import iata from ".//" 
+
+
 
 class Air extends React.Component {
   state = {
-    airlist: ''
+    airList: []
   };
 
   constructor(props) {
@@ -14,26 +20,38 @@ class Air extends React.Component {
 
     console.log('hello from air api');
     axios.get('https://api.skypicker.com/flights?flyFrom=AUS&to=BOS&dateFrom=18/02/2019&dateTo=22/02/2019&partner=picky')
-      .then((airData) => {
+      .then(response => {
+        // let airList = response.data.data
+        // return airList.map(item => item.airlines[0] = iata(item.airlines[0]) )
+        return response.data.data
+        
+        // return airport code
+      })
+      .then(airList => {
         this.setState({
-          airlist: airData
+          airList
         })
-        console.log("data from air api", airData);
       })
       .catch((error) => {
         console.log(error);
       })
-      .then(() => {
-      });
+
   }
 
   render() {
+    let { airList } = this.state
     return (
       <div>
-        AIR
-
-
-
+       {airList.map((item, index) => {
+          if (index < 5) {
+            return <div className="margin-bottom-is-20px">
+                <p>Airline: {item.airlines[0]} </p>
+                <p>Flight price: USD ${item.price}</p>
+                <p>Travel Time: {item.fly_duration}</p>
+                <br />
+              </div>;
+          }
+        })}
       </div>
 
     );
@@ -42,16 +60,3 @@ class Air extends React.Component {
 
 export default Air;
 
-
-// {this.state.airlist && this.state.airlist.airData.data.map((flight, index) => {
-//   if (index < 5) {
-//     return (
-//       <div>
-//         <p>Airline: {flight.airlines} </p> this is an array and codes
-// <p>Flight price: USD ${flight.price}</p>
-//         <p>Travel Time: {flight.fly_duration}</p>
-//         <br></br>
-//       </div>
-//     )
-//   }
-// })}

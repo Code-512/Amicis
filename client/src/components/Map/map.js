@@ -28,11 +28,10 @@ render() {
           DirectionsService.route({
             origin: new google.maps.LatLng(41.8507300, -87.6512600),
                         destination: new google.maps.LatLng(30.267153, -97.7430608),
-    //                     origin: this.props.origin,
-    // destination: this.props.destination,
-            travelMode: google.maps.TravelMode.DRIVING,
+              travelMode: google.maps.TravelMode.DRIVING,
           }, (result, status) => {
             if (status === google.maps.DirectionsStatus.OK) {
+              console.log('result', result)
 this.setState({
                 directions: {...result},
                 markers: true
