@@ -61,10 +61,10 @@ class PlanTrip extends Component {
           getDestination={this.updateLocation}
           onLocationChange={this.updateLocation}
           placeholderText="Where ya goin'?" />
-        <Link to={`/results?originLat=${this.state.cities[0].originCity}&originLng=${this.state.cities[0].originLng}&originCity=${this.state.cities[0].originCity}&destinationLat=${this.state.cities[1].destinationLat}&destinationLng=${this.state.cities[1].destinationLng}&destinationCity=${this.state.cities.[1].destinationCity}&date=${this.formatDate()}`}
+        {/* <Link to={`/results?originLat=${this.state.cities[0].originCity}&originLng=${this.state.cities[0].originLng}&originCity=${this.state.cities[0].originCity}&destinationLat=${this.state.cities[1].destinationLat}&destinationLng=${this.state.cities[1].destinationLng}&destinationCity=${this.state.cities.[1].destinationCity}&date=${this.formatDate()}`}
         >
           <button>plan trip</button>
-        </Link>
+        </Link> */}
       </Container>
     );
   }
