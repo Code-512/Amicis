@@ -1,5 +1,6 @@
 /*global google*/
 import React from 'react'
+import PlanTrip from '../../pages/PlanTrip';
 import  { compose, withProps, lifecycle } from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, DirectionsRenderer} from 'react-google-maps'
 

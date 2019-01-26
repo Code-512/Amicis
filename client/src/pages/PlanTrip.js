@@ -18,6 +18,7 @@ updateLocation = (place) => {
     origin: place,
     destination: place
   });
+  console.log('update location', this.state);
 };
 
 getDate = (date) => {

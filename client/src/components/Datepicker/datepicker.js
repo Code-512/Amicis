@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import PlanTrip from '../../pages/PlanTrip';
+
 
 const styles = theme => ({
   container: {
@@ -16,6 +18,7 @@ const styles = theme => ({
 });
 
 function DatePickers(props) {
+  console.log('This is PlanTrip state data', PlanTrip.state);
   const { classes } = props;
 
   return (
