@@ -4,7 +4,6 @@ import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
-import queryString from 'query-string'
 
 
 
@@ -12,15 +11,14 @@ import queryString from 'query-string'
 class Results extends Component {
   componentDidMount() {
     // Now we must save the data into state and figure out how to pass it to where we need it 
-    console.log(this.props.location.search) //.search
+    console.log(this.props.location.search);
     const newParams = new URLSearchParams(this.props.location.search);
     const origin = newParams.get('origin');
     const destination = newParams.get('destination');
     const date = newParams.get('date');
-    console.log(date, origin, destination);
-    // const values = queryString.parse(this.props.location)
-    // console.log(values.destination)
-    // console.log(values.origin) 
+    console.log(date);
+    console.log(origin)
+    console.log(destination) 
   }
   
   render() {

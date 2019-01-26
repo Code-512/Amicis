@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Submit from "../components/SubmitButton/submit"
-import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
 import { Link } from "react-router-dom";
-// import myDatePicker from "../components/DP/dp";
-// import queryString from 'query-string'
+import DatePickTest from './datePickerTest'
+
 
 class PlanTrip extends Component {
   state = {
     origin: null,
     destination: null,
-    value: ''
+    value: '',
+    selectedDate: new Date()
+    
 };
 
 updateLocation = (place) => {
@@ -24,22 +25,19 @@ updateLocation = (place) => {
   console.log('update location', this.state);
 };
 
-getDate = (date) => {
-  console.log('date', date)
-  this.setState({
-    calendar: date
-  });
+handleDateChange = date => {
+  this.setState({ selectedDate: date });
 };
 
-// datePickerReceipt() {
-//   return({DatePickers})
-// }
+formatDate = () => {
+let stringDate = `${this.state.selectedDate.getDate().toString()}/${(this.state.selectedDate.getMonth() +1).toString()}/${(this.state.selectedDate.getFullYear().toString())}`;
+console.log(stringDate)
 
-handleChange = (e, x) => {
-  console.log(x)
+return stringDate;
 }
 
   render() {
+    // this.formatDate();
     console.log('cool')
     return (
       <Container fluid>
@@ -47,14 +45,12 @@ handleChange = (e, x) => {
               <h1>THIS WILL BE PLAN TRIP PAGE</h1>
               
             </Jumbotron>
-                    
+      <DatePickTest 
+      handleDateChange={this.handleDateChange} 
+      selectedDate={this.state.selectedDate}
+      />
+      
 
-            {/* <Submit onClick={this.sendSubmitButton}/> */}
-            <DatePickers 
-            calendarDate={this.getDate}
-            value={this.state.value}
-            handleChange={this.handleChange}
-            />
             {/* <PlacesWithStandaloneSearchBox getOrigin={this.updateLocation}/>
             <PlacesWithStandaloneSearchBox getDestination={this.updateLocation}/> */}
             <PlacesWithStandaloneSearchBox 
@@ -71,7 +67,11 @@ handleChange = (e, x) => {
             
             {/* <Link to={`/resuts?origin=${this.state.origin}&dest=${this.state.dest}`}>See Results<Link> */}
        
-            <Link to={`/results?origin=${this.state.origin}&destination=${this.state.destination}&date=${this.state.date}`}>
+            <Link to={`/results?origin=${this.state.origin}&destination=${this.state.destination}&date=${this.formatDate()}`}
+            // state={
+
+            // }
+            >
                      <button>plan trip</button>
             </Link>
       </Container>
@@ -80,7 +80,5 @@ handleChange = (e, x) => {
   }
 }
 
-
   
-
 export default PlanTrip;
