@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import SimpleCard from "../Card/card"
 // import Iata from '../Iata/iata';
 
 
@@ -49,6 +50,7 @@ class Air extends React.Component {
                 <p>Flight price: USD ${item.price}</p>
                 <p>Travel Time: {item.fly_duration}</p>
                 <br />
+                <SimpleCard />
               </div>;
           }
         })}
