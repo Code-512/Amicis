@@ -17,12 +17,21 @@ const styles = theme => ({
 
 function DatePickers(props) {
   const { classes } = props;
-
-    // this.setState({
-    //   date: [],
-    // });
-    // this.props.getDate(this.state.date)
-
+    
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     value: new Date()
+  //   }
+  // }  
+  // this.state = {
+  //     value: new Date()
+  //   }
+  
+  
+  // handleChange = (event, value) => {
+  //   this.setState({value});
+  // }
 
   return (
     <form className={classes.container} noValidate>

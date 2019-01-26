@@ -4,10 +4,19 @@ import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
-// import queryString from 'query-string'
+import queryString from 'query-string'
+
+
+
 
 function Results(props) {
-  console.log("results.js props", props);
+
+  // componentDidMount() 
+  //   const values = queryString.parse(this.props.location.search)
+  //   console.log(values.destination)
+  //   console.log(values.origin) 
+  
+
   return (
     <Container fluid>
       <Jumbotron>
