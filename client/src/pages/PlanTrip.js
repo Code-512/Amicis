@@ -9,12 +9,7 @@ import DatePickTest from './datePickerTest'
 
 class PlanTrip extends Component {
   state = {
-    originLat: null,
-    originLng: null,
-    originCity: null,
-    destinationLat: null,
-    destinationLng: null,
-    destinationCity: null,
+    cities:[],
     value: '',
     selectedDate: new Date()
 
@@ -23,14 +18,17 @@ class PlanTrip extends Component {
   updateLocation = (place) => {
     console.log('PLACE', place)
     this.setState({
-      originLat: place.geometry.viewport.ga.j,
-    originLng: null,
-    originCity: null,
-    destinationLat: null,
-    destinationLng: null,
-    destinationCity: null,
+      cities:[...this.state.cities, {
+        originLat: place.geometry.viewport.ma.j,
+        originLng: place.geometry.viewport.ga.j,
+        originCity: place.name,
+        destinationLat: place.geometry.viewport.ma.j,
+        destinationLng: place.geometry.viewport.ga.j,
+        destinationCity: place.name
+      }]
     });
-    console.log('update location', this.state);
+    console.log('cities', this.state.cities);
+    // console.log(originLng)
   };
 
   handleDateChange = date => {
@@ -63,12 +61,11 @@ class PlanTrip extends Component {
           getDestination={this.updateLocation}
           onLocationChange={this.updateLocation}
           placeholderText="Where ya goin'?" />
-        <Link to={`/results?origin=${this.state.originLat}&destination=${this.state.destination}$&date=${this.formatDate()}`}
+        <Link to={`/results?originLat=${this.state.cities[0].originCity}&originLng=${this.state.cities[0].originLng}&originCity=${this.state.cities[0].originCity}&destinationLat=${this.state.cities[1].destinationLat}&destinationLng=${this.state.cities[1].destinationLng}&destinationCity=${this.state.cities.[1].destinationCity}&date=${this.formatDate()}`}
         >
           <button>plan trip</button>
         </Link>
       </Container>
-
     );
   }
 }
