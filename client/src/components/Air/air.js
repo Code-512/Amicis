@@ -50,7 +50,7 @@ class Air extends React.Component {
                 <p>Flight price: USD ${item.price}</p>
                 <p>Travel Time: {item.fly_duration}</p>
                 <br />
-                <SimpleCard />
+                <SimpleCard airline={item.airlines[0]}/>
               </div>;
           }
         })}
