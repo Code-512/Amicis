@@ -5,7 +5,7 @@ import Submit from "../components/SubmitButton/submit"
 import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
 import { Link } from "react-router-dom";
-import myDatePicker from "../components/DP/dp";
+// import myDatePicker from "../components/DP/dp";
 // import queryString from 'query-string'
 
 class PlanTrip extends Component {
@@ -73,7 +73,7 @@ handleChange = (e, x) => {
        
             <Link to={`/results?origin=${this.state.origin}&destination=${this.state.destination}&date=${this.state.date}`}>
                      <button>plan trip</button>
-              </Link>
+            </Link>
       </Container>
       
     );  

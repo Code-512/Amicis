@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
@@ -9,15 +9,22 @@ import queryString from 'query-string'
 
 
 
-function Results(props) {
-
-  // componentDidMount() 
-  //   const values = queryString.parse(this.props.location.search)
-  //   console.log(values.destination)
-  //   console.log(values.origin) 
+class Results extends Component {
+  componentDidMount() {
+    // Now we must save the data into state and figure out how to pass it to where we need it 
+    console.log(this.props.location.search) //.search
+    const newParams = new URLSearchParams(this.props.location.search);
+    const origin = newParams.get('origin');
+    const destination = newParams.get('destination');
+    const date = newParams.get('date');
+    console.log(date, origin, destination);
+    // const values = queryString.parse(this.props.location)
+    // console.log(values.destination)
+    // console.log(values.origin) 
+  }
   
-
-  return (
+  render() {
+    return (
     <Container fluid>
       <Jumbotron>
         <h1>Results</h1>
@@ -32,7 +39,8 @@ function Results(props) {
         </Col>
       </Row>
     </Container>
-  );
+    )
+  }
 }
-
+  
 export default Results;
