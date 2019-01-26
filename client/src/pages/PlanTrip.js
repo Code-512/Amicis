@@ -5,13 +5,14 @@ import Submit from "../components/SubmitButton/submit"
 import DatePickers from "../components/Datepicker/datepicker"
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox"
 import { Link } from "react-router-dom";
-// import myDatePicker from "../components/DP/dp";
+import myDatePicker from "../components/DP/dp";
 // import queryString from 'query-string'
 
 class PlanTrip extends Component {
   state = {
     origin: null,
-    destination: null
+    destination: null,
+    value: ''
 };
 
 updateLocation = (place) => {
@@ -30,21 +31,29 @@ getDate = (date) => {
   });
 };
 
-datePickerReceipt() {
-  return({DatePickers})
+// datePickerReceipt() {
+//   return({DatePickers})
+// }
+
+handleChange = (e, x) => {
+  console.log(x)
 }
 
   render() {
+    console.log('cool')
     return (
       <Container fluid>
             <Jumbotron>
               <h1>THIS WILL BE PLAN TRIP PAGE</h1>
               
             </Jumbotron>
-          {/* <myDatePicker /> */}
-            <Submit onClick={this.sendSubmitButton}/>
+                    
+
+            {/* <Submit onClick={this.sendSubmitButton}/> */}
             <DatePickers 
             calendarDate={this.getDate}
+            value={this.state.value}
+            handleChange={this.handleChange}
             />
             {/* <PlacesWithStandaloneSearchBox getOrigin={this.updateLocation}/>
             <PlacesWithStandaloneSearchBox getDestination={this.updateLocation}/> */}
