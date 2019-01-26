@@ -21,6 +21,12 @@ function DatePickers(props) {
   console.log('This is PlanTrip state data', PlanTrip.state);
   const { classes } = props;
 
+    // this.setState({
+    //   date: [],
+    // });
+    // this.props.getDate(this.state.date)
+
+
   return (
     <form className={classes.container} noValidate>
       <TextField

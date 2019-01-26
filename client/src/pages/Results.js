@@ -7,7 +7,7 @@ import Air from "../components/Air/air";
 // import queryString from 'query-string'
 
 function Results(props) {
-  console.log(props);
+  console.log("results.js props", props);
   return (
     <Container fluid>
       <Jumbotron>

@@ -17,8 +17,6 @@ class Air extends React.Component {
   }
 
   componentDidMount() {
-
-    console.log('hello from air api');
     axios.get('https://api.skypicker.com/flights?flyFrom=AUS&to=BOS&dateFrom=18/02/2019&dateTo=22/02/2019&partner=picky')
       .then(response => {
         // let airList = response.data.data
