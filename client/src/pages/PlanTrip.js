@@ -11,7 +11,8 @@ import myDatePicker from "../components/DP/dp";
 class PlanTrip extends Component {
   state = {
     origin: null,
-    destination: null
+    destination: null,
+    value: ''
 };
 
 updateLocation = (place) => {
@@ -33,7 +34,12 @@ getDate = (date) => {
 //   return({DatePickers})
 // }
 
+handleChange = (e, x) => {
+  console.log(x)
+}
+
   render() {
+    console.log('cool')
     return (
       <Container fluid>
             <Jumbotron>
@@ -42,9 +48,11 @@ getDate = (date) => {
             </Jumbotron>
                     
 
-            <Submit onClick={this.sendSubmitButton}/>
+            {/* <Submit onClick={this.sendSubmitButton}/> */}
             <DatePickers 
             calendarDate={this.getDate}
+            value={this.state.value}
+            handleChange={this.handleChange}
             />
             {/* <PlacesWithStandaloneSearchBox getOrigin={this.updateLocation}/>
             <PlacesWithStandaloneSearchBox getDestination={this.updateLocation}/> */}

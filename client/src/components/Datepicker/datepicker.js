@@ -16,7 +16,7 @@ const styles = theme => ({
 });
 
 function DatePickers(props) {
-  const { classes } = props;
+  const { classes, value, handleChange } = props;
     
   // constructor(props) {
   //   super(props);
@@ -33,13 +33,19 @@ function DatePickers(props) {
   //   this.setState({value});
   // }
 
+ 
+
+  // --parent (function that updates state, like above - pass down as a prop; a submit btn lives here, it reads state and does something)
+  //    --form1 (this will run that function and pass back info)
+  //    --form2
+  //    --etc
+
   return (
-    <form className={classes.container} noValidate>
+    <form className={classes.container} noValidate >
       <TextField
         id="date"
         label="When ya goin'?"
         type="date"
-        defaultValue=""
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
@@ -51,6 +57,7 @@ function DatePickers(props) {
 
 DatePickers.propTypes = {
   classes: PropTypes.object.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(DatePickers);
