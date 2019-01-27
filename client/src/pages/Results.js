@@ -53,13 +53,13 @@ class Results extends Component {
     });
   }
 
-  myCallback = (dataFromChild) => {
-    this.setState({ listDataFromChild: dataFromChild });
-}
+//   myCallback = (dataFromChild) => {
+//     this.setState({ listDataFromChild: dataFromChild });
+// }
 
-otherFn = () => {
-   console.log(this.state.listDataFromChild)
-}
+// otherFn = () => {
+//    console.log(this.state.listDataFromChild)
+// }
 
   render() {
     return (
@@ -73,7 +73,7 @@ otherFn = () => {
           
         </Jumbotron>
         {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
-        <Map callbackFromParent={this.myCallback.bind(this)}/>
+        <Map Orglat={30.0986589}/>
         <Row>
           <Col size="md-6">
           

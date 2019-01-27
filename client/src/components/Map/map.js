@@ -27,6 +27,7 @@ class Map extends React.Component {
         componentDidMount() {
           const DirectionsService = new google.maps.DirectionsService();
           //To access long and lat or position this.props.state.position
+          console.log("originLat on map page,", this.props.Orglat);
           DirectionsService.route({
             origin: new google.maps.LatLng(41.8507300, -87.6512600),
             destination: new google.maps.LatLng(30.267153, -97.7430608),
@@ -48,10 +49,13 @@ class Map extends React.Component {
       <GoogleMap
         defaultZoom={3}
       >
-        {props.directions && <DirectionsRenderer directions={props.directions} suppressMarkers={props.markers} />}
+        {props.directions && <DirectionsRenderer directions={props.directions} 
+        // suppressMarkers={props.markers} />}
+        suppressMarkers={props.markers} panel={ document.getElementById('panel') }/>}
+        {/* <div id="panel"></div> */}
       </GoogleMap>
+      
     );
-
 
   //   someFn = () => {
   //     const listInfo=this.props.callbackFromParent(listInfo)
