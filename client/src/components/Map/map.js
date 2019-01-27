@@ -3,6 +3,7 @@ import React from 'react'
 import PlanTrip from '../../pages/PlanTrip';
 import { compose, withProps, lifecycle } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, DirectionsRenderer } from 'react-google-maps'
+import { getOverlappingDaysInIntervals } from 'date-fns/esm';
 
 
 
@@ -50,7 +51,14 @@ class Map extends React.Component {
         {props.directions && <DirectionsRenderer directions={props.directions} suppressMarkers={props.markers} />}
       </GoogleMap>
     );
-    return (
+
+
+  //   someFn = () => {
+  //     const listInfo=this.props.callbackFromParent(listInfo)
+  // }
+
+
+  return (
 
       <DirectionsComponent
       />

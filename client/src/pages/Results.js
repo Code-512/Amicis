@@ -6,7 +6,12 @@ import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
 
 class Results extends Component {
-  state = {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        listDataFromChild: null,
+
     date: '',
     originLat:'',
     originLng:'',
@@ -14,10 +19,11 @@ class Results extends Component {
     destinationLat:'',
     destinationLng:'',
     destinationCity:''
-  };
+  };    
+
+  }
 
   componentDidMount() {
-    // Now we must save the data into state and figure out how to pass it to where we need it
     // console.log(this.props.location.search);
     const newParams = new URLSearchParams(this.props.location.search);
     const originLat = newParams.get('originLat');
@@ -47,19 +53,32 @@ class Results extends Component {
     });
   }
 
+  myCallback = (dataFromChild) => {
+    this.setState({ listDataFromChild: dataFromChild });
+}
+
+otherFn = () => {
+   console.log(this.state.listDataFromChild)
+}
+
   render() {
     return (
       <Container fluid>
         <Jumbotron>
           <h1>Results</h1>
           DATE: {this.state.date}
+          Distance of trip: 
+          originLat {this.state.originLat}
+          originLng {this.state.originLng}
+          
         </Jumbotron>
-        <Map />
-
+        {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
+        <Map callbackFromParent={this.myCallback.bind(this)}/>
         <Row>
           <Col size="md-6">
-          Distance of trip: 
-            <Gas lat={30.2672} lng={-97.7431} />
+          
+            <Gas lat={30.0986589} lng={-97.93838289999997} />
+                      
           </Col>
           <Col size="md-6 sm-12">
             <Air />
