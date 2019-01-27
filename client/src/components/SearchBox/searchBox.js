@@ -9,6 +9,7 @@ const { withScriptjs,
 const PlacesWithStandaloneSearchBox = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDBfd54qyD2BoEk1fzXahImKNPT_KTW4SA&v=3.exp&libraries=geometry,drawing,places",
+    // types: ['(cities)'],
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
   }),
@@ -58,7 +59,9 @@ const PlacesWithStandaloneSearchBox = compose(
         }}
       />
     </StandaloneSearchBox>
-    <ol>
+
+
+    {/* <ol>
       {props.places.map(({ place_id, formatted_address, geometry: { location } }) =>
         <li key={place_id}>
           {formatted_address}
@@ -66,7 +69,18 @@ const PlacesWithStandaloneSearchBox = compose(
           ({location.lat()}, {location.lng()})
         </li>
       )}
-    </ol>
+    </ol> */}
+
+
+    {/* <ol>
+      {props.places.map(({ place_id, formatted_address, geometry: { location } }) =>
+        <li key={place_id}>
+          {formatted_address}
+          {" at "}
+          ({location.lat()}, {location.lng()})
+        </li>
+      )}
+    </ol> */}
   </div>
 );
  export default PlacesWithStandaloneSearchBox
