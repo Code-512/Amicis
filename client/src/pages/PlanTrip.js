@@ -4,7 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 import Submit from "../components/SubmitButton/submit";
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox";
 import { Link } from "react-router-dom";
-import DatePickTest from "./datePickerTest";
+import DatePickTest from "../components/Pickers/pickers";
 
 class PlanTrip extends Component {
   state = {
@@ -62,7 +62,6 @@ class PlanTrip extends Component {
           onLocationChange={this.updateLocation}
           placeholderText="Where ya goin'?"
         />
-
         <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}>
           <button>plan trip</button>
         </Link>

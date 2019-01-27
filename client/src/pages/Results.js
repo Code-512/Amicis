@@ -5,10 +5,17 @@ import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
 
-
-
-
 class Results extends Component {
+  // state = {
+
+  // }
+
+
+
+
+
+
+
   componentDidMount() {
     // Now we must save the data into state and figure out how to pass it to where we need it 
     console.log(this.props.location.search);
@@ -19,6 +26,8 @@ class Results extends Component {
     console.log(date);
     console.log(origin)
     console.log(destination) 
+    console.log("window:", window.location.search)
+    console.log('date from url', window.location.search.date)
   }
   
   render() {
