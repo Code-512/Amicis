@@ -17,7 +17,13 @@ class Air extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://api.skypicker.com/flights?flyFrom=AUS&to=BOS&dateFrom=18/02/2019&dateTo=22/02/2019&partner=picky')
+    axios.get('https://api.skypicker.com/flights?flyFrom=AUS&to=BOS&dateFrom=18/02/2019&partner=picky')
+
+//  axios.get(`https://api.skypicker.com/flights?flyFrom=AUS&to=AUS&dateFrom=${this.props.date}&partner=picky`)
+
+
+    // axios.get(`https://api.skypicker.com/flights?flyFrom=${this.props.orgCode}&to=${this.props.destCode}&dateFrom=${this.props.date}&partner=picky`)
+
       .then(response => {
         // let airList = response.data.data
         // return airList.map(item => item.airlines[0] = iata(item.airlines[0]) )

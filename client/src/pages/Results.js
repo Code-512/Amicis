@@ -10,8 +10,7 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        listDataFromChild: null,
-
+        // listDataFromChild: null,
     date: '',
     originLat:'',
     originLng:'',
@@ -81,7 +80,10 @@ class Results extends Component {
                       
           </Col>
           <Col size="md-6 sm-12">
+            {/* <Air orgCode={AUS} destCode={BOS} date={21/3/2019}/> */}
+            {/* <Air date={21/10/2019}/> */}
             <Air />
+            
           </Col>
         </Row>
       </Container>
