@@ -28,7 +28,7 @@ class PlanTrip extends Component {
         }
       ]
     });
-    console.log("cities", this.state.cities[0].originLat);
+    console.log("cities array", this.state.cities);
   };
 
   handleDateChange = date => {
@@ -62,7 +62,10 @@ class PlanTrip extends Component {
           onLocationChange={this.updateLocation}
           placeholderText="Where ya goin'?"
         />
-        <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}>
+        {/* Most of code needed to pass props, needs to be tweeked */}
+        {/* <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}> */}
+
+        <Link to={`/results?originLat=30.0986589&originLng=$-97.93838289999997&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=New Orleans&date=${this.formatDate()}`}>
           <button>plan trip</button>
         </Link>
       </Container>
@@ -71,3 +74,10 @@ class PlanTrip extends Component {
 }
 
 export default PlanTrip;
+
+// org lat 30.0986589
+// PlanTrip.js:32 org lng -97.93838289999997
+// PlanTrip.js:33 org City Austin
+// dest lat  29.8666609
+// dest lgn -90.1400739
+// dest city New Orleans
