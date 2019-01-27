@@ -27,7 +27,6 @@
     "cors": "^2.8.5",
     "date-fns": "2.0.0-alpha.25",
     "express": "^4.16.4",
-    "google-maps-react": "^2.0.2",
     "iatacodes": "^7.0.1",
     "if-env": "^1.0.4",
     "material-ui-custom-datepicker": "^1.0.33",
