@@ -17,7 +17,6 @@ class Results extends Component {
   };
 
   componentDidMount() {
-    // Now we must save the data into state and figure out how to pass it to where we need it
     // console.log(this.props.location.search);
     const newParams = new URLSearchParams(this.props.location.search);
     const originLat = newParams.get('originLat');
@@ -50,15 +49,9 @@ class Results extends Component {
   render() {
     return (
       <Container fluid>
-        <Jumbotron>
-          <h1>Results</h1>
-          DATE: {this.state.date}
-        </Jumbotron>
         <Map />
-
         <Row>
           <Col size="md-6">
-          Distance of trip: 
             <Gas lat={30.2672} lng={-97.7431} />
           </Col>
           <Col size="md-6 sm-12">

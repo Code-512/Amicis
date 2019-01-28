@@ -40,13 +40,14 @@ function GasSimpleCard(props) {
                 <Typography component="p">
                 address<br />
                 city, state <br />
-                Regular: $ <br />
+                Regular: $
                     {/* {address}<br />
                     {city}, {state} <br />
                     Regular: $ {regular} */}
                 </Typography>
             </CardContent>
             <CardActions>
+            <Button size="small"></Button>
             </CardActions>
         </Card>
     );
