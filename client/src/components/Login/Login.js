@@ -52,7 +52,7 @@ class Login extends React.Component {
               </Row>
         
         <img className="mb-4" 
-        // src={}
+        src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg"
         alt="" width="72" height="72">
         </img>
 
