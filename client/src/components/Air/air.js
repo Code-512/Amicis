@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import SimpleCard from "../Card/card"
+import AirSimpleCard from "../Cards/airCard"
 
 class Air extends React.Component {
   state = {
@@ -28,7 +28,6 @@ class Air extends React.Component {
       .catch((error) => {
         console.log(error);
       })
-
   }
 
   render() {
@@ -38,11 +37,11 @@ class Air extends React.Component {
        {airList.map((item, index) => {
           if (index < 5) {
             return <div className="margin-bottom-is-20px">
-                <p>Airline: {item.airlines[0]} </p>
+                {/* <p>Airline: {item.airlines[0]} </p>
                 <p>Flight price: USD ${item.price}</p>
-                <p>Travel Time: {item.fly_duration}</p>
+                <p>Travel Time: {item.fly_duration}</p> */}
                 <br />
-                <SimpleCard airline={item.airlines[0]}/>
+               <AirSimpleCard airline={item.airlines[0]} price={item.price} time={item.fly_duration}/>
               </div>;
           }
         })}
