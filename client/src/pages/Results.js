@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
+import PaperSheet from "../components/Paper/paper"
 import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
@@ -51,11 +52,14 @@ class Results extends Component {
     return (
       <Container >
               <Map />
+              <br />
                <Row>
-          <Col size="md-6">
+          <Col size="md-6 sm-12">
+          <PaperSheet driveTitle={"Driving Results"} driveDist={"234 miles"} driveTime={"Travel Time: 3 hours, 6 minutes"} driveCost={"Cost: $245"} />
             <Gas lat={30.2672} lng={-97.7431} />
           </Col>
           <Col size="md-6 sm-12">
+          <PaperSheet airTitle={"Flight Results"} airDist={"234 miles"}empty={""} />
             <Air />
           </Col>
         </Row>
