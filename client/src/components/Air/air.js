@@ -1,11 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import Iata from '../Iata/iata';
-
-
-// import iata from ".//" 
-
-
+import SimpleCard from "../Card/card"
 
 class Air extends React.Component {
   state = {
@@ -47,6 +42,7 @@ class Air extends React.Component {
                 <p>Flight price: USD ${item.price}</p>
                 <p>Travel Time: {item.fly_duration}</p>
                 <br />
+                <SimpleCard airline={item.airlines[0]}/>
               </div>;
           }
         })}
