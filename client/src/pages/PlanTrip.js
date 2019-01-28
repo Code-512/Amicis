@@ -6,6 +6,10 @@ import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox";
 import { Link } from "react-router-dom";
 import DatePickTest from "../components/Pickers/pickers";
 
+
+
+
+
 class PlanTrip extends Component {
   state = {
     cities: [],
@@ -42,12 +46,17 @@ class PlanTrip extends Component {
     return stringDate;
   };
 
+
+
   render() {
     return (
       <Container fluid>
         <Jumbotron>
           <h1>THIS WILL BE PLAN TRIP PAGE</h1>
         </Jumbotron>
+
+ 
+
         <DatePickTest
           handleDateChange={this.handleDateChange}
           selectedDate={this.state.selectedDate}
@@ -72,6 +81,8 @@ class PlanTrip extends Component {
     );
   }
 }
+
+
 
 export default PlanTrip;
 

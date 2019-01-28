@@ -17,7 +17,8 @@ class Results extends Component {
     originCity:'',
     destinationLat:'',
     destinationLng:'',
-    destinationCity:''
+    destinationCity:'',
+    driveDist:'',
   };    
 
   }
@@ -51,14 +52,15 @@ class Results extends Component {
       destinationCity
     });
   }
-
-//   myCallback = (dataFromChild) => {
-//     this.setState({ listDataFromChild: dataFromChild });
-// }
-
-// otherFn = () => {
-//    console.log(this.state.listDataFromChild)
-// }
+  handleResult = (result) => {
+    if(result){
+      console.log(result.routes[0].legs[0].distance.text)
+      this.setState({
+        driveDist: result.routes[0].legs[0].distance.text
+      })
+    }
+    
+  }
 
   render() {
     return (
@@ -66,21 +68,22 @@ class Results extends Component {
         <Jumbotron>
           <h1>Results</h1>
           DATE: {this.state.date}
-          Distance of trip: 
+          Distance of trip: {this.state.driveDist}
+          Drive time: 
           originLat {this.state.originLat}
           originLng {this.state.originLng}
           
         </Jumbotron>
         {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
-        <Map Orglat={30.0986589}/>
+        <Map handleResult = {this.handleResult} Orglat={30.0986589}/>
         <Row>
           <Col size="md-6">
           
-            <Gas lat={30.0986589} lng={-97.93838289999997} />
+            <Gas lat={this.state.originLat} lng={-97.93838289999997} />
                       
           </Col>
           <Col size="md-6 sm-12">
-            {/* <Air orgCode={AUS} destCode={BOS} date={21/3/2019}/> */}
+            <Air orgCode={"AUS"} destCode={"BOS"} date={"21/3/2019"}/>
             {/* <Air date={21/10/2019}/> */}
             <Air />
             

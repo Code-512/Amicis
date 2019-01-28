@@ -10,6 +10,10 @@ import { getOverlappingDaysInIntervals } from 'date-fns/esm';
 class Map extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      handleResult: this.props.handleResult
+    }
+    
   }
 
   render() {
@@ -28,6 +32,7 @@ class Map extends React.Component {
           const DirectionsService = new google.maps.DirectionsService();
           //To access long and lat or position this.props.state.position
           console.log("originLat on map page,", this.props.Orglat);
+          const self = this;
           DirectionsService.route({
             origin: new google.maps.LatLng(41.8507300, -87.6512600),
             destination: new google.maps.LatLng(30.267153, -97.7430608),
@@ -35,8 +40,10 @@ class Map extends React.Component {
           }, (result, status) => {
             if (status === google.maps.DirectionsStatus.OK) {
               console.log('map result', result)
+              
               this.setState({
                 directions: { ...result },
+                result: result,
                 markers: true
               })
             } else {
@@ -46,6 +53,8 @@ class Map extends React.Component {
         }
       })
     )(props =>
+      <div>
+        {this.state.handleResult(props.directions)}
       <GoogleMap
         defaultZoom={3}
       >
@@ -54,6 +63,7 @@ class Map extends React.Component {
         suppressMarkers={props.markers} panel={ document.getElementById('panel') }/>}
         {/* <div id="panel"></div> */}
       </GoogleMap>
+      </div>
       
     );
 
