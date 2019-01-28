@@ -4,6 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
+// import "./Results.css";
 
 class Results extends Component {
   state = {
@@ -48,9 +49,9 @@ class Results extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Map />
-        <Row>
+      <Container >
+              <Map />
+               <Row>
           <Col size="md-6">
             <Gas lat={30.2672} lng={-97.7431} />
           </Col>

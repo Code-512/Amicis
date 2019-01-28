@@ -38,8 +38,8 @@ class Gas extends React.Component {
             <p>Regular: $ {station.reg_price}</p> */}
             <br></br>
             <GasSimpleCard 
-            // station={station.station} 
-            // address={station.address} city={station.city} state={station.region} regular={station.reg_price}
+            station={station.station} 
+            address={station.address} city={station.city} state={station.region} regular={station.reg_price}
             />
             </div>
           ) 
