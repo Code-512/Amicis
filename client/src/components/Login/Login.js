@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import Jumbotron from "../Jumbotron";
+import Footer from "../Footer";
+import "./style.css";
 import { Col, Row, Container } from "../Grid";
+import Hero from '../Hero';
 
 
 class Login extends React.Component {
@@ -41,24 +43,45 @@ class Login extends React.Component {
 
     render(){
         return (
-            <Container fluid>
+        <div>
               <Row>
                 <Col size="md-12">
-                 <Jumbotron>
-                </Jumbotron>
-        <div>
+                 <Hero backgroundImage="https://images.unsplash.com/photo-1475694867812-f82b8696d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80">
+                </Hero>
+                </Col>
+              </Row>
+        
+        <img className="mb-4" 
+        // src={}
+        alt="" width="72" height="72">
+        </img>
 
-            <input placeholder="email" 
+        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+            <input type="email" 
+            id="inputEmail" 
+            className="form-control" 
+            placeholder="Email address" 
+            required autofocus 
             value={this.state.email}
             name="email"
-            onChange={this.handleChange}/>
+            onChange={this.handleChange}
+            />
 
-            <input placeholder="password" 
+            <input type="password" 
+            id="inputPassword" 
+            className="form-control" 
+            placeholder="Password" 
             value={this.state.password}
             name="password" 
-            onChange={this.handleChange}/>
+            onChange={this.handleChange}
+            required 
+            />
 
-            <button onClick={this.handleSubmit}>Login</button>
+            <button 
+            className="btn btn-lg btn-primary btn-block" 
+            onClick={this.handleSubmit}
+            type="submit">Sign in</button>
 
             <a href="/registration"> Need an account? </a>
 
@@ -67,10 +90,8 @@ class Login extends React.Component {
             { this.state.userDetails.firstName ? <h1> Hi {this.state.userDetails.firstName}</h1> : <div>You need to Login!</div>}
 
             </div>
+        <Footer />
         </div>
-            </Col>
-          </Row>
-        </Container>
         )
     }
 }
