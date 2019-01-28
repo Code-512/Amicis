@@ -19,12 +19,12 @@ class Results extends Component {
     destinationLng:'',
     destinationCity:'',
     driveDist:'',
+    driveTime:''
   };    
 
   }
 
   componentDidMount() {
-    // console.log(this.props.location.search);
     const newParams = new URLSearchParams(this.props.location.search);
     const originLat = newParams.get('originLat');
     const originLng = newParams.get('originLng');
@@ -40,7 +40,6 @@ class Results extends Component {
     console.log('destinationLat from results page', destinationLat)
     console.log('destinationLng from results page', destinationLng)
     console.log('destinationCity from results page', destinationCity)
-    // console.log("window:", window.location.search);
 
     this.setState({
       date,
@@ -54,9 +53,11 @@ class Results extends Component {
   }
   handleResult = (result) => {
     if(result){
-      console.log(result.routes[0].legs[0].distance.text)
+      // console.log("distance array on results page", result.routes[0].legs[0].distance.text)
+      // console.log("time array on results page", result.routes[0].legs[0].duration.text)
       this.setState({
-        driveDist: result.routes[0].legs[0].distance.text
+        driveDist: result.routes[0].legs[0].distance.text,
+        driveTime: result.routes[0].legs[0].duration.text
       })
     }
     
@@ -69,7 +70,7 @@ class Results extends Component {
           <h1>Results</h1>
           DATE: {this.state.date}
           Distance of trip: {this.state.driveDist}
-          Drive time: 
+          Drive time: {this.state.driveTime}
           originLat {this.state.originLat}
           originLng {this.state.originLng}
           
@@ -79,14 +80,13 @@ class Results extends Component {
         <Row>
           <Col size="md-6">
           
-            <Gas lat={this.state.originLat} lng={-97.93838289999997} />
+            <Gas lat={30.0986589} lng={-97.93838289999997} distance={this.state.driveDist} time={this.state.driveTime}/>
                       
           </Col>
           <Col size="md-6 sm-12">
-            <Air orgCode={"AUS"} destCode={"BOS"} date={"21/3/2019"}/>
-            {/* <Air date={21/10/2019}/> */}
+            {/* <Air orgCode={"AUS"} destCode={"BOS"} date={"21/3/2019"}/> */}
+            {/* <Air date={"21/10/2019"}/> */}
             <Air />
-            
           </Col>
         </Row>
       </Container>

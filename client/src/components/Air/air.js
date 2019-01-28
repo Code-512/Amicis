@@ -11,7 +11,7 @@ class Air extends React.Component {
 
   constructor(props) {
     super(props);
-  console.log ("air props", props)
+    console.log("air props", props)
   }
 
   componentDidMount() {

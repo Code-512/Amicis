@@ -18,7 +18,7 @@ class PlanTrip extends Component {
   };
 
   updateLocation = place => {
-    console.log("PLACE", place);
+    // console.log("PLACE", place);
     this.setState({
       cities: [
         ...this.state.cities,

@@ -8,7 +8,7 @@ class Gas extends React.Component {
 
   constructor(props){
     super(props)
-    console.log(props, " these are your props")
+    console.log("props from gas.js", props)
   }
 
   componentDidMount(){

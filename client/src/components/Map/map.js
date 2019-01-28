@@ -39,7 +39,7 @@ class Map extends React.Component {
             travelMode: google.maps.TravelMode.DRIVING,
           }, (result, status) => {
             if (status === google.maps.DirectionsStatus.OK) {
-              console.log('map result', result)
+              // console.log('map result', result)
               
               this.setState({
                 directions: { ...result },
