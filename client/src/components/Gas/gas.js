@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import GasSimpleCard from "../Cards/gasCard"
 
 class Gas extends React.Component {
   state = {
@@ -27,16 +28,19 @@ class Gas extends React.Component {
   render() {
       return (
         <div>
-          GAS
         {this.state.gaslist && this.state.gaslist.data.stations.map( (station, index) => { 
           if (index < 5 ) {
           return (
             <div>
-            <p>{station.station} </p>
+            {/* <p>{station.station} </p>
             <p>{station.address}</p>
             <p>{station.city}, {station.region}</p>
-            <p>Regular: $ {station.reg_price}</p>
+            <p>Regular: $ {station.reg_price}</p> */}
             <br></br>
+            <GasSimpleCard 
+            station={station.station} 
+            address={station.address} city={station.city} state={station.region} regular={station.reg_price}
+            />
             </div>
           ) 
         }

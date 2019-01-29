@@ -16,9 +16,9 @@ class Map extends React.Component {
     const DirectionsComponent = compose(
       withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDBfd54qyD2BoEk1fzXahImKNPT_KTW4SA&libraries=places",
-        loadingElement: <div style={{ height: `400px` }} />,
+        loadingElement: <div style={{ height: `40vh` }} />,
         containerElement: <div style={{ width: `100%` }} />,
-        mapElement: <div style={{ height: `600px`, width: `600px` }} />,
+        mapElement: <div style={{ height: `40vh`, width: `100%` }} />,
       }),
       withScriptjs,
       withGoogleMap,
