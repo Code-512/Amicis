@@ -54,7 +54,7 @@ console.log(props.thisismadeup)
       <Paper className={classes.paper}>
         <Avatar className={classes.props} src={process.env.PUBLIC_URL + '/favicon.png'}>
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" >
           Sign in
         </Typography>
         <form className={classes.form}>
