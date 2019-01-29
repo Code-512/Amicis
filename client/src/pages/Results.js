@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
+import PaperSheet from "../components/Paper/paper"
 import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
+// import "./Results.css";
 
 class Results extends Component {
   state = {
@@ -17,7 +19,6 @@ class Results extends Component {
   };
 
   componentDidMount() {
-    // Now we must save the data into state and figure out how to pass it to where we need it
     // console.log(this.props.location.search);
     const newParams = new URLSearchParams(this.props.location.search);
     const originLat = newParams.get('originLat');
@@ -49,19 +50,16 @@ class Results extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Jumbotron>
-          <h1>Results</h1>
-          DATE: {this.state.date}
-        </Jumbotron>
-        <Map />
-
-        <Row>
-          <Col size="md-6">
-          Distance of trip: 
+      <Container >
+              <Map />
+              <br />
+               <Row>
+          <Col size="md-6 sm-12">
+          <PaperSheet driveTitle={"Driving Results"} driveDist={"234 miles"} driveTime={"Travel Time: 3 hours, 6 minutes"} driveCost={"Cost: $245"} />
             <Gas lat={30.2672} lng={-97.7431} />
           </Col>
           <Col size="md-6 sm-12">
+          <PaperSheet airTitle={"Flight Results"} airDist={"234 miles"}empty={""} />
             <Air />
           </Col>
         </Row>
