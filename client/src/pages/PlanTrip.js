@@ -14,7 +14,7 @@ class PlanTrip extends Component {
   state = {
     cities: [],
     value: "",
-    selectedDate: new Date()
+    selectedDate: new Date(),
   };
 
   updateLocation = place => {
@@ -33,6 +33,7 @@ class PlanTrip extends Component {
       ]
     });
     console.log("cities array", this.state.cities);
+    console.log("cities lat", this.state.cities[0].destinationLat);
   };
 
   handleDateChange = date => {
@@ -55,7 +56,7 @@ class PlanTrip extends Component {
           <h1>THIS WILL BE PLAN TRIP PAGE</h1>
         </Jumbotron>
 
- 
+
 
         <DatePickTest
           handleDateChange={this.handleDateChange}
@@ -71,10 +72,13 @@ class PlanTrip extends Component {
           onLocationChange={this.updateLocation}
           placeholderText="Where ya goin'?"
         />
+
+{/* <h1>destination   {!(this.state.cities[0].destinationLat) ? null: this.state.cities[0].destinationLat}</h1> */}
+       
         {/* Most of code needed to pass props, needs to be tweeked */}
         {/* <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}> */}
 
-        <Link to={`/results?originLat=30.0986589&originLng=$-97.93838289999997&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=New Orleans&date=${this.formatDate()}`}>
+        <Link to={`/results?originLat=30.098&originLng=-97.938&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=Houston&date=${this.formatDate()}`}>
           <button>plan trip</button>
         </Link>
       </Container>

@@ -33,13 +33,13 @@ class Results extends Component {
     const destinationLng = newParams.get('destinationLng');
     const destinationCity = newParams.get('destinationCity');
     const date = newParams.get("date");
-    console.log("date from results page", date);
-    console.log('originLat from results page', originLat);
-    console.log('originLng from results page', originLng)
-    console.log('originCity from results page', originCity)
-    console.log('destinationLat from results page', destinationLat)
-    console.log('destinationLng from results page', destinationLng)
-    console.log('destinationCity from results page', destinationCity)
+    // console.log("date from results page", date);
+    // console.log('originLat from results page', originLat);
+    // console.log('originLng from results page', originLng)
+    // console.log('originCity from results page', originCity)
+    // console.log('destinationLat from results page', destinationLat)
+    // console.log('destinationLng from results page', destinationLng)
+    // console.log('destinationCity from results page', destinationCity)
 
     this.setState({
       date,
@@ -53,7 +53,7 @@ class Results extends Component {
   }
   handleResult = (result) => {
     if(result){
-      // console.log("distance array on results page", result.routes[0].legs[0].distance.text)
+      console.log("distance array on results page", result.routes[0].legs[0].distance.text)
       // console.log("time array on results page", result.routes[0].legs[0].duration.text)
       this.setState({
         driveDist: result.routes[0].legs[0].distance.text,
@@ -76,11 +76,11 @@ class Results extends Component {
           
         </Jumbotron>
         {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
-        <Map handleResult = {this.handleResult} Orglat={30.0986589}/>
+        <Map handleResult={this.handleResult} Orglat={30.0986589}/>
         <Row>
           <Col size="md-6">
           
-            <Gas lat={30.0986589} lng={-97.93838289999997} distance={this.state.driveDist} time={this.state.driveTime}/>
+            <Gas lat={parseFloat(this.state.originLat)} lng={parseFloat(this.state.originLng)} distance={this.state.driveDist} time={this.state.driveTime}/>
                       
           </Col>
           <Col size="md-6 sm-12">

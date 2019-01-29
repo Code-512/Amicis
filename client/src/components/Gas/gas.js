@@ -2,18 +2,17 @@ import React from 'react';
 import axios from 'axios'
 
 class Gas extends React.Component {
-  state = {
-      gaslist: ''
-  };
+state = {gaslist:""}
 
-  constructor(props){
-    super(props)
-    console.log("props from gas.js", props)
-  }
+  
+    
+  
 
   componentDidMount(){
     axios.get(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
     .then( (data) => {
+      console.log(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
+      console.log(data)
           this.setState({
                   gaslist: data
               })
@@ -26,6 +25,7 @@ class Gas extends React.Component {
   }
     
   render() {
+    console.log("props from gas.js", this.props)
       return (
         <div>
           GAS

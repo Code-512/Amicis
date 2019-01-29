@@ -11,7 +11,6 @@ class Map extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      handleResult: this.props.handleResult
     }
     
   }
@@ -52,9 +51,9 @@ class Map extends React.Component {
           });
         }
       })
-    )(props =>
+    ) (props =>
       <div>
-        {this.state.handleResult(props.directions)}
+        {this.props.handleResult(props.directions)}
       <GoogleMap
         defaultZoom={3}
       >
