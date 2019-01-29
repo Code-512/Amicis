@@ -26,8 +26,9 @@ class Login extends React.Component {
         console.log(event.target)
     };
 
-    handleSubmit = () => {
-        console.log('invoked!')
+    handleSubmit = e => {
+        e.preventDefault()
+        //add a check for all the params you're sending if(this.state.name) etc...
     axios.get('/api/user/login', {
         params: 
             {email: this.state.name, password: this.state.password }
@@ -48,21 +49,14 @@ class Login extends React.Component {
               <Row>
                 <Col size="md-12">
                  <Hero backgroundImage="https://images.unsplash.com/photo-1475694867812-f82b8696d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80">
-                    
-                    <img src={process.env.PUBLIC_URL + '/favicon.png'} /> 
 
-                            <img className="mb-4"
-                                src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg"
-                                alt="" width="72" height="72">
-                            </img>
-                
                             <div>
                             
                             {this.state.userDetails.firstName ? <h1 className="h3 mb-3 font-weight-normal"> Hi {this.state.userDetails.firstName}</h1> : <h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>}
                             
                             </div>
 
-                            <input type="email"
+                            {/* <input type="email"
                                 id="inputEmail"
                                 className="form-control"
                                 placeholder="Email address"
@@ -85,7 +79,7 @@ class Login extends React.Component {
                                 className="btn btn-lg btn-primary btn-block" 
                                 onClick={this.handleSubmit}
                                 type="submit">Sign in
-                            </button>
+                            </button> */}
                         <a href="/registration"> Need an account? </a>
                 </Hero>
                 </Col>

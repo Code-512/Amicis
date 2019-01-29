@@ -52,7 +52,7 @@ console.log(props.thisismadeup)
     <main className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
-        <Avatar className={classes.props}>
+        <Avatar className={classes.props} src={process.env.PUBLIC_URL + '/favicon.png'}>
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
@@ -69,7 +69,7 @@ console.log(props.thisismadeup)
             autofocus
             value={props.email}
             name="email"
-            onChange={props.handleChange} 
+            onChange={props.onChange} 
             autoFocus />
           </FormControl>
           <FormControl margin="normal" required fullWidth>
@@ -82,7 +82,7 @@ console.log(props.thisismadeup)
             className="form-control"
             placeholder="Password"
             value={props.password}
-            onChange={props.handleChange}
+            onChange={props.onChange}
             required />
           </FormControl>
           <FormControlLabel
@@ -98,6 +98,16 @@ console.log(props.thisismadeup)
             onClick={props.handleSubmit}
           >
             Sign in
+          </Button>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            a href="/registration"
+          >
+            Register
           </Button>
         </form>
       </Paper>
