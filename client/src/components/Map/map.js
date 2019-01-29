@@ -37,6 +37,14 @@ class Map extends React.Component {
             origin: new google.maps.LatLng(41.8507300, -87.6512600),
             destination: new google.maps.LatLng(30.267153, -97.7430608),
             travelMode: google.maps.TravelMode.DRIVING,
+            waypoints: [
+              {
+                location: new google.maps.LatLng(14.546748, 121.05455)
+              },
+              {
+                location: new google.maps.LatLng(14.552444, 121.044488)
+              }
+            ]
           }, (result, status) => {
             if (status === google.maps.DirectionsStatus.OK) {
               // console.log('map result', result)
