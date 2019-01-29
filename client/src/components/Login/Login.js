@@ -48,7 +48,9 @@ class Login extends React.Component {
               <Row>
                 <Col size="md-12">
                  <Hero backgroundImage="https://images.unsplash.com/photo-1475694867812-f82b8696d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80">
+                    
                     <img src={process.env.PUBLIC_URL + '/favicon.png'} /> 
+
                             <img className="mb-4"
                                 src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg"
                                 alt="" width="72" height="72">
@@ -89,7 +91,7 @@ class Login extends React.Component {
                 </Col>
               </Row>
         
-                    <LoginCard handleSubmit={this.handleSubmit} onChange={this.handleChange} email={this.state.email} thisismadeup={'hello'}/>
+                    <LoginCard handleSubmit={this.handleSubmit} onChange={this.handleChange} email={this.state.email} password={this.state.password}/>
 
 
         <Footer />
@@ -98,7 +100,18 @@ class Login extends React.Component {
     }
 }
 
+// props = {
+//     handleSubmit={this.handleSubmit}
+//      onChange={this.handleChange} 
+//      value={this.state.email}
+//       thisismadeup={'hello'}
+// }
 
+// let person = {
+//     name: 'joe'
+// }
 
+// person.name => 'joe'
+// props.value => this.state.email
 
 export default Login

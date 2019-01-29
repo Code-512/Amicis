@@ -61,7 +61,6 @@ console.log(props.thisismadeup)
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">Email Address</InputLabel>
             <Input 
-            id="email"
             name="email" 
             autoComplete="email"
             type="email"
@@ -75,7 +74,16 @@ console.log(props.thisismadeup)
           </FormControl>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="password">Password</InputLabel>
-            <Input name="password" type="password" id="password" autoComplete="current-password" />
+            <Input 
+            name="password" 
+            type="password"
+            autoComplete="current-password"
+            id="inputPassword"
+            className="form-control"
+            placeholder="Password"
+            value={props.password}
+            onChange={props.handleChange}
+            required />
           </FormControl>
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
