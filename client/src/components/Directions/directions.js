@@ -26,7 +26,7 @@ const MapWithADirectionsRenderer = compose(
           travelMode: google.maps.TravelMode.DRIVING,
         }, (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
-              console.log('result',result)
+              // console.log('result',result)
             this.setState({
               directions: result,
             });
