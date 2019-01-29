@@ -5,6 +5,7 @@ import "./style.css";
 import { Col, Row, Container } from "../Grid";
 import Hero from '../Hero';
 // import favicon from '../../public/favicon.png'
+import LoginCard from './LoginCard'
 
 
 class Login extends React.Component {
@@ -26,6 +27,7 @@ class Login extends React.Component {
     };
 
     handleSubmit = () => {
+        console.log('invoked!')
     axios.get('/api/user/login', {
         params: 
             {email: this.state.name, password: this.state.password }
@@ -82,13 +84,13 @@ class Login extends React.Component {
                                 onClick={this.handleSubmit}
                                 type="submit">Sign in
                             </button>
+                        <a href="/registration"> Need an account? </a>
                 </Hero>
                 </Col>
               </Row>
         
+                    <LoginCard handleSubmit={this.handleSubmit} onChange={this.handleChange} email={this.state.email} thisismadeup={'hello'}/>
 
-
-            <a href="/registration"> Need an account? </a>
 
         <Footer />
         </div>
