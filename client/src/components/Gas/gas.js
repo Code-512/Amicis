@@ -9,6 +9,7 @@ state = {gaslist:""}
   
 
   componentDidMount(){
+    // axios.get(`http://api.mygasfeed.com/stations/radius/30.100315/-97.874947/5/reg/price/esmbi7wobr.json?`)
     axios.get(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
     .then( (data) => {
       console.log(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
@@ -20,8 +21,6 @@ state = {gaslist:""}
     .catch( (error) =>{
       console.log(error);
     })
-    .then( ()=> {
-    });
   }
     
   render() {
@@ -50,3 +49,6 @@ state = {gaslist:""}
 }    
 
 export default Gas;
+
+
+

@@ -53,7 +53,7 @@ class Map extends React.Component {
       })
     ) (props =>
       <div>
-        {this.props.handleResult(props.directions)}
+        {/* {this.props.handleResult(props.directions)} */}
       <GoogleMap
         defaultZoom={3}
       >

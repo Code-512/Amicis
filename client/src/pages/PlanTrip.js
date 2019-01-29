@@ -78,7 +78,7 @@ class PlanTrip extends Component {
         {/* Most of code needed to pass props, needs to be tweeked */}
         {/* <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}> */}
 
-        <Link to={`/results?originLat=30.098&originLng=-97.938&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=Houston&date=${this.formatDate()}`}>
+        <Link to={`/results?originLat=30.103352&originLng=-97.869392&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=Houston&date=${this.formatDate()}`}>
           <button>plan trip</button>
         </Link>
       </Container>

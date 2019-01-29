@@ -76,7 +76,8 @@ class Results extends Component {
           
         </Jumbotron>
         {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
-        <Map handleResult={this.handleResult} Orglat={30.0986589}/>
+        {/* <Map handleResult={this.handleResult} Orglat={30.0986589}/> */}
+        <Map />
         <Row>
           <Col size="md-6">
           
