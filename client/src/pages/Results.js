@@ -8,18 +8,23 @@ import Air from "../components/Air/air";
 // import "./Results.css";
 
 class Results extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
+        // listDataFromChild: null,
     date: '',
     originLat:'',
     originLng:'',
     originCity:'',
     destinationLat:'',
     destinationLng:'',
-    destinationCity:''
+    destinationCity:'',
+    driveDist:'',
+    driveTime:''
   };
+  }
 
   componentDidMount() {
-    // console.log(this.props.location.search);
     const newParams = new URLSearchParams(this.props.location.search);
     const originLat = newParams.get('originLat');
     const originLng = newParams.get('originLng');
@@ -35,7 +40,6 @@ class Results extends Component {
     console.log('destinationLat from results page', destinationLat)
     console.log('destinationLng from results page', destinationLng)
     console.log('destinationCity from results page', destinationCity)
-    // console.log("window:", window.location.search);
 
     this.setState({
       date,
@@ -46,6 +50,16 @@ class Results extends Component {
       destinationLng,
       destinationCity
     });
+  }
+  handleResult = (result) => {
+    if(result){
+      // console.log("distance array on results page", result.routes[0].legs[0].distance.text)
+      // console.log("time array on results page", result.routes[0].legs[0].duration.text)
+      this.setState({
+        driveDist: result.routes[0].legs[0].distance.text,
+        driveTime: result.routes[0].legs[0].duration.text
+      })
+    }
   }
 
   render() {
