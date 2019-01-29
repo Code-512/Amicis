@@ -8,7 +8,6 @@ import Air from "../components/Air/air";
 // import "./Results.css";
 
 class Results extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +21,7 @@ class Results extends Component {
     destinationCity:'',
     driveDist:'',
     driveTime:''
-  };    
-
+  };
   }
 
   componentDidMount() {
@@ -62,7 +60,6 @@ class Results extends Component {
         driveTime: result.routes[0].legs[0].duration.text
       })
     }
-    
   }
 
   render() {
