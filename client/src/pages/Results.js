@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
+import PaperSheet from "../components/Paper/paper"
 import Jumbotron from "../components/Jumbotron";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
+// import "./Results.css";
 
 class Results extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -20,8 +21,7 @@ class Results extends Component {
     destinationCity:'',
     driveDist:'',
     driveTime:''
-  };    
-
+  };
   }
 
   componentDidMount() {
@@ -60,32 +60,20 @@ class Results extends Component {
         driveTime: result.routes[0].legs[0].duration.text
       })
     }
-    
   }
 
   render() {
     return (
-      <Container fluid>
-        <Jumbotron>
-          <h1>Results</h1>
-          DATE: {this.state.date}
-          Distance of trip: {this.state.driveDist}
-          Drive time: {this.state.driveTime}
-          originLat {this.state.originLat}
-          originLng {this.state.originLng}
-          
-        </Jumbotron>
-        {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
-        <Map handleResult = {this.handleResult} Orglat={30.0986589}/>
-        <Row>
-          <Col size="md-6">
-          
-            <Gas lat={30.0986589} lng={-97.93838289999997} distance={this.state.driveDist} time={this.state.driveTime}/>
-                      
+      <Container >
+              <Map />
+              <br />
+               <Row>
+          <Col size="md-6 sm-12">
+          <PaperSheet driveTitle={"Driving Results"} driveDist={"234 miles"} driveTime={"Travel Time: 3 hours, 6 minutes"} driveCost={"Cost: $245"} />
+            <Gas lat={30.2672} lng={-97.7431} />
           </Col>
           <Col size="md-6 sm-12">
-            {/* <Air orgCode={"AUS"} destCode={"BOS"} date={"21/3/2019"}/> */}
-            {/* <Air date={"21/10/2019"}/> */}
+          <PaperSheet airTitle={"Flight Results"} airDist={"234 miles"}empty={""} />
             <Air />
           </Col>
         </Row>
