@@ -47,7 +47,6 @@ const styles = theme => ({
 
 function LoginCard(props) {
   const { classes } = props;
-console.log(props.thisismadeup)
   return (
     <main className={classes.main}>
       <CssBaseline />
@@ -55,7 +54,7 @@ console.log(props.thisismadeup)
         <Avatar className={classes.props} src={process.env.PUBLIC_URL + '/favicon.png'}>
         </Avatar>
         <Typography component="h1" variant="h5" >
-          Sign in
+        { props.name ?  <h1> Hi {props.name}</h1> : <h1>Please Sign In</h1>}
         </Typography>
         <form className={classes.form}>
           <FormControl margin="normal" required fullWidth>

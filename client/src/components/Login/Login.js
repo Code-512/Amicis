@@ -45,49 +45,25 @@ class Login extends React.Component {
 
     render(){
         return (
-        <div>
-
-                            <div>
-                 <Hero backgroundImage="https://images.unsplash.com/photo-1475694867812-f82b8696d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80">
-                            
-                            {this.state.userDetails.firstName ? <h1 className="h3 mb-3 font-weight-normal"> Hi {this.state.userDetails.firstName}</h1> : <h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>}
-                            <LoginCard 
-                            handleSubmit={this.handleSubmit} 
-                            onChange={this.handleChange} 
-                            email={this.state.email} 
-                            password={this.state.password}/>
-
-
-                        <Footer />
+            <div>
+                <Hero backgroundImage="https://images.unsplash.com/photo-1475694867812-f82b8696d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80">
+                    <LoginCard
+                        name={this.state.userDetails.firstName}
+                        handleSubmit={this.handleSubmit}
+                        onChange={this.handleChange}
+                        email={this.state.email}
+                        password={this.state.password} />
+                <Footer />
                 </Hero>
-                            </div>
-
-        
-
-
-        </div>
+            </div>
         )
     }
-}
-
-// props = {
-//     handleSubmit={this.handleSubmit}
-//      onChange={this.handleChange} 
-//      value={this.state.email}
-//       thisismadeup={'hello'}
-// }
-
-// let person = {
-//     name: 'joe'
-// }
-
-// person.name => 'joe'
-// props.value => this.state.email
-
+}  
 export default Login
-{/* <input type="email"
-    id="inputEmail"
-    className="form-control"
+        {/* {this.state.userDetails.firstName ? <h1 className="h3 mb-3 font-weight-normal"> Hi {this.state.userDetails.firstName}</h1> : <h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>} */}
+        {/* <input type="email"
+        id="inputEmail"
+        className="form-control"
     placeholder="Email address"
     required autofocus
     value={this.state.email}

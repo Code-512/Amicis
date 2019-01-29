@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Login from '../Login/Login'
 
-function Nav() {
+function Nav(props) {
  return (
    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
      <a className="navbar-brand" href="/">
