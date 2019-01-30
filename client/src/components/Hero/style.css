@@ -1,21 +1,12 @@
 /* Julie's code:  */
 .hero {
-    height: 75vh;
+    height: 85vh;
     background-size: cover;
     background-position: center;
     position: relative;
     background-color: #cccccc; 
     background-repeat: no-repeat;
   }
-  
-  /* Jared's code: */
-/* 
-  .hero {
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  } */
   
   .hero::after {
     content: "";
