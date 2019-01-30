@@ -28,6 +28,7 @@ function AirCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
+          // Additional images if we choose to change out later
         //   image="https://images.unsplash.com/photo-1533751784796-c6c129c710db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
           //   image="https://images.unsplash.com/photo-1525406580688-29f75b5e4c97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
           image="https://images.unsplash.com/photo-1512502600-e4aaa316250d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
@@ -37,7 +38,7 @@ function AirCard(props) {
             Airline: {airline}
           </Typography>
           <Typography component="p">
-            Flight price: USD ${price}
+            Flight price: ${price}
             <br />
             Travel Time: {time}
             <br /><br />

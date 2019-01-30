@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import GasCard from "../Cards/gasCard"
+import GasCard from "../Cards/gasCard";
 
 const h3Style = {
-  color: 'white',
+  color: "white",
   textAlign: "center"
 };
 
@@ -33,26 +33,24 @@ class Gas extends React.Component {
   render() {
     return (
       <div>
-        {this.state.gaslist ? <></> : <h3 style={h3Style}>Searching for gas stations...</h3>}
+        {this.state.gaslist ? (
+          <></>
+        ) : (
+          <h3 style={h3Style}>Searching for gas stations...</h3>
+        )}
         {this.state.gaslist &&
           this.state.gaslist.data.stations.map((station, index) => {
             if (index < 5) {
               return (
                 <div>
-                {/* <div key={index}>
-                   <p>{station.station} </p>
-                   <p>{station.address}</p>
-                   <p>
-                     {station.city}, {station.region}
-                   </p>
-                   <p>Regular: $ {station.reg_price}</p>
-                   <br />
-                </div> */}
-                <GasCard
-                station={station.station} 
-                address={station.address} city={station.city} state={station.region} regular={station.reg_price}
-                />
-                <br></br>
+                  <GasCard
+                    station={station.station}
+                    address={station.address}
+                    city={station.city}
+                    state={station.region}
+                    regular={station.reg_price}
+                  />
+                  <br />
                 </div>
               );
             }

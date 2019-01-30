@@ -3,16 +3,13 @@ import { Col, Row, Container } from "../components/Grid";
 import Map from "../components/Map/map";
 import Gas from "../components/Gas/gas";
 import Air from "../components/Air/air";
-import GasCard from "../components/Cards/gasCard";
 import PaperSheet from "../components/Paper/paper";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero/index";
+import NavPlan from "../components/Nav/NavPlan";
 
 class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // listDataFromChild: null,
       date: "",
       originLat: "",
       originLng: "",
@@ -34,13 +31,6 @@ class Results extends Component {
     const destinationLng = newParams.get("destinationLng");
     const destinationCity = newParams.get("destinationCity");
     const date = newParams.get("date");
-    // console.log("date from results page", date);
-    // console.log('originLat from results page', originLat);
-    // console.log('originLng from results page', originLng)
-    // console.log('originCity from results page', originCity)
-    // console.log('destinationLat from results page', destinationLat)
-    // console.log('destinationLng from results page', destinationLng)
-    // console.log('destinationCity from results page', destinationCity)
 
     this.setState({
       date,
@@ -54,10 +44,10 @@ class Results extends Component {
   }
   handleResult = result => {
     if (result) {
-      console.log(
-        "distance array on results page",
-        result.routes[0].legs[0].distance.text
-      );
+      // console.log(
+      //   "distance array on results page",
+      //   result.routes[0].legs[0].distance.text
+      // );
       // console.log("time array on results page", result.routes[0].legs[0].duration.text)
       this.setState({
         driveDist: result.routes[0].legs[0].distance.text,
@@ -65,23 +55,20 @@ class Results extends Component {
       });
     }
   };
-  // turkish #4F97A3'
-  // Steel:  #4682B4
-  // AirForce: #588BAE
   render() {
     return (
-      <div style = {{backgroundColor: '#588BAE', padding: 0, margin: 0}}> 
+      <div style={{ backgroundColor: "#588BAE", padding: 0, margin: 0 }}>
+        <NavPlan />
+        <Map />
         <Container style={{ padding: 20 }}>
-        <br />
-          <Map />
           <br />
           <Row>
             <Col size="md-6 sm-12">
               <PaperSheet
                 driveTitle={"Driving Results"}
-                driveDist={"234 miles"}
-                driveTime={"Travel Time: 3 hours, 6 minutes"}
-                driveCost={"Cost: $245"}
+                driveDist={"517 miles"}
+                driveTime={"Travel Time: 7 hours, 58 minutes"}
+                driveCost={"Cost: $41.36"}
               />
               <br />
               <Gas lat={30.2672} lng={-97.7431} />
@@ -89,7 +76,7 @@ class Results extends Component {
             <Col size="md-6 sm-12">
               <PaperSheet
                 airTitle={"Flight Results"}
-                airDist={"234 miles"}
+                airDist={"517 miles"}
                 empty={""}
               />
               <br />
@@ -97,46 +84,26 @@ class Results extends Component {
             </Col>
           </Row>
         </Container>
-        <Footer />
-</div>
+      </div>
     );
   }
 }
 export default Results;
 
-//UNSTYLED CODE ---------------------------------->
-//   render() {
-//     return (
-//       <Container fluid>
-//         <Jumbotron>
-//           <h1>Results</h1>
+// All of these need to be parsed before they can be sent
+
 //           DATE: {this.state.date}
 //           Distance of trip: {this.state.driveDist}
 //           Drive time: {this.state.driveTime}
 //           originLat {this.state.originLat}
 //           originLng {this.state.originLng}
-//         </Jumbotron>
-//         {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
-//         {/* <Map handleResult={this.handleResult} Orglat={30.0986589}/> */}
-//         <Map />
-//         <Row>
-//           <Col size="md-6">
-//             <Gas
-//               lat={parseFloat(this.state.originLat)}
-//               lng={parseFloat(this.state.originLng)}
-//               distance={this.state.driveDist}
-//               time={this.state.driveTime}
-//             />
-//           </Col>
-//           <Col size="md-6 sm-12">
-//             {/* <Air orgCode={"AUS"} destCode={"BOS"} date={"21/3/2019"}/> */}
-//             {/* <Air date={"21/10/2019"}/> */}
-//             <Air />
-//           </Col>
-//         </Row>
-//       </Container>
-//     );
-//   }
-// }
-
-// export default Results;
+//           {/* <Map callbackFromParent={this.myCallback.bind(this)}/> */}
+//           {/* <Map handleResult={this.handleResult} Orglat={30.0986589}/> */}
+//           <Gas
+//           lat={parseFloat(this.state.originLat)}
+//           lng={parseFloat(this.state.originLng)}
+//           distance={this.state.driveDist}
+//           time={this.state.driveTime}
+//           />
+//           {/* <Air orgCode={"AUS"} destCode={"BOS"} date={"21/3/2019"}/> */}
+//           {/* <Air date={"21/10/2019"}/> */}

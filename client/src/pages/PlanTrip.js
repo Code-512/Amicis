@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Submit from "../components/SubmitButton/submit";
-import Footer from "../components/Footer/index";
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox";
 import { Link } from "react-router-dom";
 import DatePickTest from "../components/Pickers/pickers";
 import Hero from "../components/Hero/index";
-import GasCard from "../components/Cards/gasCard";
 import Avatar from "@material-ui/core/Avatar";
+import NavAboutLogin from "../components/Nav/NavAboutLogin"
 
 class PlanTrip extends Component {
   state = {
@@ -49,9 +47,8 @@ class PlanTrip extends Component {
   render() {
     return (
       <div>
+        <NavAboutLogin />
         <Hero backgroundImage="https://images.unsplash.com/photo-1484544808355-8ec84e534d75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80">
-
-        {/* <Hero backgroundImage="https://images.unsplash.com/photo-1490380169520-0a4b88d52565?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"> */}
           <br />
           <Jumbotron>
             <Avatar
@@ -77,27 +74,20 @@ class PlanTrip extends Component {
               placeholderText="Where ya goin'?"
             />
             <br />
-            {/* <h1>destination   {!(this.state.cities[0].destinationLat) ? null: this.state.cities[0].destinationLat}</h1> */}
             {/* Most of code needed to pass props, needs to be tweeked */}
+            {/* <h1>destination   {!(this.state.cities[0].destinationLat) ? null: this.state.cities[0].destinationLat}</h1> */}
+            
             {/* <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}> */}
             <Link
-              to={`/results?originLat=30.103352&originLng=-97.869392&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=Houston&date=${this.formatDate()}`}
+              to={`/results?originLat=30.103352&originLng=-97.869392&originCity=Austin&destinationLat=29.9511&destinationLng=-90.0715&destinationCity=Houston&date=${this.formatDate()}`}
             >
               <Submit>Let's Go!</Submit>
             </Link>
           </Jumbotron>
         </Hero>
-        <Footer />
         </div>
     );
   }
 }
-
 export default PlanTrip;
 
-// org lat 30.0986589
-// PlanTrip.js:32 org lng -97.93838289999997
-// PlanTrip.js:33 org City Austin
-// dest lat  29.8666609
-// dest lgn -90.1400739
-// dest city New Orleans

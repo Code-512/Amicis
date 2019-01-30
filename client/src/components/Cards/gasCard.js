@@ -13,8 +13,8 @@ import Gas from "../Gas/gas";
 const styles = {
   card: {
     maxWidth: 345,
-    marginLeft: 'auto', 
-    marginRight: 'auto'
+    marginLeft: "auto",
+    marginRight: "auto"
   },
   media: {
     height: 140
@@ -22,16 +22,17 @@ const styles = {
 };
 function GasCard(props) {
   const { classes, station, address, city, state, regular } = props;
-  console.log ("gas props", props.address)
+  console.log("gas props", props.address);
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-        //   image="https://images.unsplash.com/photo-1486330071120-ba4e79e49431?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80"
+          // Additional images if we would like to use them later
+          //   image="https://images.unsplash.com/photo-1486330071120-ba4e79e49431?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80"
           //   image="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1308&q=80"
-        //   image="https://images.unsplash.com/photo-1446436975449-d93bd4cebfcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80"
-        image="https://images.unsplash.com/photo-1465447142348-e9952c393450?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80"
+          //   image="https://images.unsplash.com/photo-1446436975449-d93bd4cebfcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80"
+          image="https://images.unsplash.com/photo-1465447142348-e9952c393450?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

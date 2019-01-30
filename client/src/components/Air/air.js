@@ -1,11 +1,9 @@
 import React from "react";
 import axios from "axios";
 import AirCard from "../Cards/airCard";
-// import Iata from '../Iata/iata';
-// import iata from ".//"
 
 const h3Style = {
-  color: 'white',
+  color: "white",
   textAlign: "center"
 };
 
@@ -22,16 +20,16 @@ class Air extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.skypicker.com/flights?flyFrom=AUS&to=BOS&dateFrom=18/02/2019&partner=picky`
+        `https://api.skypicker.com/flights?flyFrom=AUS&to=MSY&dateFrom=18/02/2019&partner=picky`
       )
 
+      // Attempting to pass props into api
       // axios
       //   .get(
       //     `http://api.skypicker.com/flights?flyFrom=AUS&to=AUS&dateFrom=${
       //       this.props.date
       //     }&partner=picky`
       //   )
-
       // axios.get(`https://api.skypicker.com/flights?flyFrom=${this.props.orgCode}&to=${this.props.destCode}&dateFrom=${this.props.date}&partner=picky`)
 
       .then(response => {
@@ -60,28 +58,22 @@ class Air extends React.Component {
             if (index < 5) {
               return (
                 <div className="margin-bottom-is-20px" key={index}>
-                  {/* <p>Airline: {item.airlines[0]} </p>
-                  <p>Flight price: USD ${item.price}</p>
-                  <p>Travel Time: {item.fly_duration}</p>
-                  <br /> */}
-                  {/* </div> */}
                   <AirCard
                     airline={item.airlines[0]}
                     price={item.price}
                     time={item.fly_duration}
                   />
-                  <br /> 
+                  <br />
                 </div>
               );
             }
           })
         ) : (
-          <h3 style={h3Style}>Searching for flights...</h3>
-        )}
+            <h3 style={h3Style}>Searching for flights...</h3>
+          )}
         {}
       </div>
     );
   }
 }
-
 export default Air;

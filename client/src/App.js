@@ -2,7 +2,6 @@ import React from "react";
 import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 import PlanTrip from "./pages/PlanTrip";
@@ -16,7 +15,6 @@ function App() {
   return (
     <Router>
       <div>
-      <Nav />
       <Switch>
       <Route path="/Login" exact component={Login} />
       <Route path="/registration" exact component={Registration} />
