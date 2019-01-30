@@ -1,0 +1,9 @@
+.hover-king{
+    opacity: 0;
+  transition: all ease 0.8s;
+}
+
+.hover-king:hover {
+  opacity: 1;
+}
+

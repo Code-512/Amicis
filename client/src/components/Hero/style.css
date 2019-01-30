@@ -6,6 +6,9 @@
     position: relative;
     background-color: #cccccc; 
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .hero::after {
@@ -22,5 +25,9 @@
   
   .hero * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    
   }
+
+
+
