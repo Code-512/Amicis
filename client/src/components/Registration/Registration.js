@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios';
-
+import Jumbotron from "../Jumbotron";
+import Footer from "../Footer/index";
+import Hero from "../Hero/index";
+import Avatar from "@material-ui/core/Avatar";
 import "./style.css";
 
 function validate(email, password, firstName, lastName) {
@@ -93,6 +96,16 @@ class Registration extends React.Component {
     };
 
     return (
+      <div>
+        <Hero backgroundImage="https://images.unsplash.com/photo-1490380169520-0a4b88d52565?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        <br></br>
+      <Jumbotron>
+            <Avatar
+              src={process.env.PUBLIC_URL + "/favicon.png"}
+              style={{ margin: "auto" }}
+            />
+            <br />
+            Create Your Account
       <form >
         <input
           className={shouldMarkError("email") ? "error" : ""}
@@ -128,6 +141,10 @@ class Registration extends React.Component {
         />
         <button onClick={this.handleSubmit}>Sign up</button>
       </form>
+      </Jumbotron>
+        </Hero>
+        <Footer />
+        </div>
     );
   }
 }
