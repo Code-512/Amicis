@@ -12,14 +12,16 @@ import Air from "../Air/air";
 
 const styles = {
   card: {
-    maxWidth: 345
+    maxWidth: 345, 
+    marginLeft: 'auto', 
+    marginRight: 'auto'
   },
   media: {
     height: 140
   }
 };
 
-function AirSimpleCard(props) {
+function AirCard(props) {
   const { classes, airline, price, time } = props;
   return (
     <Card className={classes.card}>
@@ -51,8 +53,8 @@ function AirSimpleCard(props) {
   );
 }
 
-AirSimpleCard.propTypes = {
+AirCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(AirSimpleCard);
+export default withStyles(styles)(AirCard);

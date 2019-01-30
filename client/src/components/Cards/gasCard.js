@@ -12,14 +12,17 @@ import Gas from "../Gas/gas";
 
 const styles = {
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    marginLeft: 'auto', 
+    marginRight: 'auto'
   },
   media: {
     height: 140
   }
 };
-function GasSimpleCard(props) {
+function GasCard(props) {
   const { classes, station, address, city, state, regular } = props;
+  console.log ("gas props", props.address)
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -51,12 +54,12 @@ function GasSimpleCard(props) {
   );
 }
 
-GasSimpleCard.propTypes = {
+GasCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(GasSimpleCard);
-// function GasSimpleCard(props) {
+export default withStyles(styles)(GasCard);
+// function GasCard(props) {
 //     const { classes, airline } = props;
 //     const bull = <span className={classes.bullet}>•</span>;
 
@@ -84,8 +87,8 @@ export default withStyles(styles)(GasSimpleCard);
 //     );
 // }
 
-// GasSimpleCard.propTypes = {
+// GasCard.propTypes = {
 //     classes: PropTypes.object.isRequired,
 // };
 
-// export default withStyles(styles)(GasSimpleCard);
+// export default withStyles(styles)(GasCard);

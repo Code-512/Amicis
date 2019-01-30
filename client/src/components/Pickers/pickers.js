@@ -8,7 +8,8 @@ import { MuiPickersUtilsProvider, DatePicker } from 'material-ui-pickers';
 
 const styles = {
   grid: {
-    width: '60%',
+    width: '60vw',
+    margin: 'auto'
   },
 };
 
@@ -21,7 +22,7 @@ class MaterialUIPickers extends React.Component {
         <Grid container className={classes.grid} justify="space-around">
           <DatePicker
             margin="normal"
-            label="Date picker"
+            label="When ya trippin'?"
             value={this.props.selectedDate}
             onChange={this.props.handleDateChange}
           />

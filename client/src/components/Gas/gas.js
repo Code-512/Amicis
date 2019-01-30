@@ -1,56 +1,60 @@
-import React from 'react';
-import axios from 'axios';
-import GasSimpleCard from "../Cards/gasCard"
+import React from "react";
+import axios from "axios";
+import GasCard from "../Cards/gasCard"
 
 class Gas extends React.Component {
-  state = {
-      gaslist: ''
+  state = { gaslist: "" };
+
+  retrieveGasData = async () => {
+    let long = "30.100315";
+
+    let lat = "-97.874947";
+    console.log(typeof this.props.lat);
+    let res = await axios.get(
+      `http://api.mygasfeed.com/stations/radius/30.100315/-97.874947/5/reg/price/esmbi7wobr.json?`
+    );
+    // let res = await axios.get(
+    //   `http://api.mygasfeed.com/stations/radius/${lat}/${long}/5/reg/price/esmbi7wobr.json?`
+    // );
+    let data = await res;
+    this.setState({ gaslist: data });
   };
 
-  constructor(props){
-    super(props)
-    console.log("props from gas.js", props)
+  componentDidMount() {
+    console.log("component mounted");
+    this.retrieveGasData();
   }
 
-  componentDidMount(){
-    axios.get(`http://api.mygasfeed.com/stations/radius/${this.props.lat}/${this.props.lng}/5/reg/price/esmbi7wobr.json?`)
-    .then( (data) => {
-          this.setState({
-                  gaslist: data
-              })
-    })
-    .catch( (error) =>{
-      console.log(error);
-    })
-    .then( ()=> {
-    });
-  }
-    
   render() {
-      return (
-        <div>
-        {this.state.gaslist && this.state.gaslist.data.stations.map( (station, index) => { 
-          if (index < 5 ) {
-          return (
-            <div>
-            {/* <p>{station.station} </p>
-            <p>{station.address}</p>
-            <p>{station.city}, {station.region}</p>
-            <p>Regular: $ {station.reg_price}</p> */}
-            <br></br>
-            <GasSimpleCard 
-            station={station.station} 
-            address={station.address} city={station.city} state={station.region} regular={station.reg_price}
-            />
-            </div>
-          ) 
-        }
-        })}
-      
-        </div>
-
-      );
-    }
-}    
+    return (
+      <div>
+        {this.state.gaslist ? <></> : <h3>Searching for gas stations...</h3>}
+        {this.state.gaslist &&
+          this.state.gaslist.data.stations.map((station, index) => {
+            if (index < 5) {
+              return (
+                <div>
+                {/* <div key={index}>
+                   <p>{station.station} </p>
+                   <p>{station.address}</p>
+                   <p>
+                     {station.city}, {station.region}
+                   </p>
+                   <p>Regular: $ {station.reg_price}</p>
+                   <br />
+                </div> */}
+                <GasCard
+                station={station.station} 
+                address={station.address} city={station.city} state={station.region} regular={station.reg_price}
+                />
+                <br></br>
+                </div>
+              );
+            }
+          })}
+      </div>
+    );
+  }
+}
 
 export default Gas;
