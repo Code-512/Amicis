@@ -4,6 +4,11 @@ import AirCard from "../Cards/airCard";
 // import Iata from '../Iata/iata';
 // import iata from ".//"
 
+const h3Style = {
+  color: 'white',
+  textAlign: "center"
+};
+
 class Air extends React.Component {
   state = {
     airList: []
@@ -71,7 +76,7 @@ class Air extends React.Component {
             }
           })
         ) : (
-          <h3>Searching for flights...</h3>
+          <h3 style={h3Style}>Searching for flights...</h3>
         )}
         {}
       </div>
