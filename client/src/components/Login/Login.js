@@ -28,7 +28,7 @@ class Login extends React.Component {
     e.preventDefault();
     //add a check for all the params you're sending if(this.state.name) etc...
     axios
-      .get("/api/user/plan", {
+      .get("/api/user/login", {
         params: { email: this.state.name, password: this.state.password }
       })
       .then(response => {
