@@ -10,20 +10,23 @@ function Middle() {
 <div className="row">
   <div className="col-lg-4">
     {/* {% include icons/placeholder.svg width="140" height="140" background="#777" color="#777" class="rounded-circle" %} */}
-    <h2>Heading</h2>
-    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+    <h2>Julez</h2>
+    <h4>Team Lead Developer</h4>
+    <p>An exciting, diverse, and winding road has led her to be the Team Lead and a Full-Stack web developer. She has worked as a National Park Ranger/firefighter, math teacher, event director, and operations manager. She is also an avid reader, and math geek. </p>
     <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
   </div>
   <div className="col-lg-4">
     {/* {% include icons/placeholder.svg width="140" height="140" background="#777" color="#777" class="rounded-circle" %} */}
-    <h2>Heading</h2>
-    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+    <h2>Boni The Bull</h2>
+    <h4>Full-Stack Developer</h4>
+    <p>Boni the Bull is Creative Director. He has a knack for creating simple, intuitive solutions for each project. With almost a decade of design, The Bull loves to help our partners see their creative vision come to life.</p>
     <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
   </div>
   <div className="col-lg-4">
     {/* {% include icons/placeholder.svg width="140" height="140" background="#777" color="#777" class="rounded-circle" %} */}
-    <h2>Heading</h2>
-    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <h2>JareBare</h2>
+    <h4>Full-Stack Developer</h4>
+    <p>JareBare is our Founder and just getting started as a full-stack developer. He enjoys solving problems from all angles, collaborating in a community-minded area for a more lucrative strategy. When he's not practicing his new talents, you can find him... </p>
     <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
   </div>
 </div>
