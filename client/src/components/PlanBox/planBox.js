@@ -49,6 +49,7 @@ const styles = theme => ({
 
 function PlanBox(props) {
   const { classes } = props;
+  console.log ("planbox props:", props)
 
   return (
     <main className={classes.main}>
@@ -61,19 +62,11 @@ function PlanBox(props) {
           Plan Your Trip
         </Typography>
 
-<DatePickTest
-        //   handleDateChange={this.handleDateChange}
-        //   selectedDate={this.state.selectedDate}
+<DatePickTest /> 
+        <PlacesWithStandaloneSearchBox placeholderText="Where ya startin'?"
         />
-        <PlacesWithStandaloneSearchBox
-        //   getOrigin={this.updateLocation}
-        //   onLocationChange={this.updateLocation}
-        //   placeholderText="Where ya startin'?"
-        />
-        <PlacesWithStandaloneSearchBox
-        //   getDestination={this.updateLocation}
-        //   onLocationChange={this.updateLocation}
-        //   placeholderText="Where ya goin'?"
+           
+        <PlacesWithStandaloneSearchBox placeholderText="Where ya goin'?"
         />
 
                          <Button

@@ -47,14 +47,15 @@ class Login extends React.Component {
         return (
             <div>
                 <Hero backgroundImage="https://images.unsplash.com/photo-1475694867812-f82b8696d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80">
+                    <br/>
                     <LoginCard
                         name={this.state.userDetails.firstName}
                         handleSubmit={this.handleSubmit}
                         onChange={this.handleChange}
                         email={this.state.email}
                         password={this.state.password} />
+                        </Hero>
                 <Footer />
-                </Hero>
             </div>
         )
     }
