@@ -16,8 +16,8 @@ function Submit(props) {
   const { classes } = props;
   return (
     <div>
-      <Button variant="contained" color="secondary" disabled className={classes.button}>
-        Disabled
+      <Button variant="contained" color="primary" className={classes.button}>
+        Let's Go!
       </Button>
       <input
         accept="image/*"
