@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Submit from "../components/SubmitButton/submit";
+import Footer from "../components/Footer/index";
 import PlacesWithStandaloneSearchBox from "../components/SearchBox/searchBox";
 import { Link } from "react-router-dom";
 import DatePickTest from "../components/Pickers/pickers";
-
-
-
-
+import Hero from "../components/Hero/index";
+import GasCard from "../components/Cards/gasCard";
+import Avatar from "@material-ui/core/Avatar";
 
 class PlanTrip extends Component {
   state = {
@@ -18,7 +18,6 @@ class PlanTrip extends Component {
   };
 
   updateLocation = place => {
-    // console.log("PLACE", place);
     this.setState({
       cities: [
         ...this.state.cities,
@@ -33,6 +32,7 @@ class PlanTrip extends Component {
       ]
     });
     console.log("cities array", this.state.cities);
+    console.log("cities lat", this.state.cities[0].destinationLat);
   };
 
   handleDateChange = date => {
@@ -46,43 +46,52 @@ class PlanTrip extends Component {
     return stringDate;
   };
 
-
-
   render() {
     return (
-      <Container fluid>
-        <Jumbotron>
-          <h1>THIS WILL BE PLAN TRIP PAGE</h1>
-        </Jumbotron>
+      <div>
+        <Hero backgroundImage="https://images.unsplash.com/photo-1484544808355-8ec84e534d75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80">
 
- 
-
-        <DatePickTest
-          handleDateChange={this.handleDateChange}
-          selectedDate={this.state.selectedDate}
-        />
-        <PlacesWithStandaloneSearchBox
-          getOrigin={this.updateLocation}
-          onLocationChange={this.updateLocation}
-          placeholderText="Where ya startin'?"
-        />
-        <PlacesWithStandaloneSearchBox
-          getDestination={this.updateLocation}
-          onLocationChange={this.updateLocation}
-          placeholderText="Where ya goin'?"
-        />
-        {/* Most of code needed to pass props, needs to be tweeked */}
-        {/* <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}> */}
-
-        <Link to={`/results?originLat=30.0986589&originLng=$-97.93838289999997&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=New Orleans&date=${this.formatDate()}`}>
-          <button>plan trip</button>
-        </Link>
-      </Container>
+        {/* <Hero backgroundImage="https://images.unsplash.com/photo-1490380169520-0a4b88d52565?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"> */}
+          <br />
+          <Jumbotron>
+            <Avatar
+              src={process.env.PUBLIC_URL + "/favicon.png"}
+              style={{ margin: "auto" }}
+            />
+            <br />
+            Plan Your Trip
+            <DatePickTest
+              handleDateChange={this.handleDateChange}
+              selectedDate={this.state.selectedDate}
+            />
+            <br />
+            <PlacesWithStandaloneSearchBox
+              getOrigin={this.updateLocation}
+              onLocationChange={this.updateLocation}
+              placeholderText="Where ya startin'?"
+            />
+            <br />
+            <PlacesWithStandaloneSearchBox
+              getDestination={this.updateLocation}
+              onLocationChange={this.updateLocation}
+              placeholderText="Where ya goin'?"
+            />
+            <br />
+            {/* <h1>destination   {!(this.state.cities[0].destinationLat) ? null: this.state.cities[0].destinationLat}</h1> */}
+            {/* Most of code needed to pass props, needs to be tweeked */}
+            {/* <Link to={`/results?originLat=${this.state.cities}&originLng=${this.state.cities}&originCity=${this.state.cities}&destinationLat=${this.state.cities}&destinationLng=${this.state.cities}&destinationCity=${this.state.cities}&date=${this.formatDate()}`}> */}
+            <Link
+              to={`/results?originLat=30.103352&originLng=-97.869392&originCity=Austin&destinationLat=29.8666609&destinationLng=-90.1400739&destinationCity=Houston&date=${this.formatDate()}`}
+            >
+              <Submit>Let's Go!</Submit>
+            </Link>
+          </Jumbotron>
+        </Hero>
+        <Footer />
+        </div>
     );
   }
 }
-
-
 
 export default PlanTrip;
 
