@@ -32,7 +32,7 @@ class NavPlan extends Component {
               <MDBNavLink to="/">About</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/Login">Login</MDBNavLink>
+              <MDBNavLink to="/login">Login</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to="/plan">Plan</MDBNavLink>

@@ -20,7 +20,7 @@ function Home() {
                 <div className="center-div-text">
                     <h1 className="featurette-heading ">TripAround V2.0</h1>
             <Link
-              to={"/Login"}
+              to={"/login"}
             >
               <Submit style = {{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>Lets get Started!</Submit>
             </Link>

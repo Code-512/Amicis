@@ -77,7 +77,7 @@ class Registration extends React.Component {
     axios.post("/api/user/register", newUser)
     .then(response => {
       console.log(response)
-      this.props.history.push('/Login');;
+      this.props.history.push('/login');;
     });
   };
 
