@@ -8,7 +8,7 @@ The TripAround app allows you to be able to find the cheapest price between eith
 + HTML5
 + CSS3
 + [Javascript](https://www.javascript.com)
-+ AJAX
++ Axios
 + [Bootstrap 4](https://getbootstrap.com/)
 + [Node.js](https://nodejs.org/en/)
 + [React JS](https://reactjs.org/)
@@ -21,6 +21,6 @@ The TripAround app allows you to be able to find the cheapest price between eith
 Upon landing on TripAround, the user must create or login to their existing account.  From there, the user will be redirected to the pan trip page. The user what will enter where they are starting and where they are going and route will be calcuated showing both gas stations and flights they can potentially take. Users will then be able to choose what the most cost effective travel option to take for their trip will be!
 
 ### Developers ###
- * Julie Wilmer - API and Programming
- * Jared Harris - Front End and Design
- * Bo Rosales- Programming
+ * Julie Wilmer - Full Stack Developer
+ * Jared Harris - Full-Stack Developer
+ * Bo Rosales- Full-Stack Developer

@@ -67,15 +67,17 @@ class Registration extends React.Component {
       return;
     }
     const { email, password } = this.state;
-    alert(`Signed up with email: ${email} password: ${password}`);
+    // alert(`Signed up with email: ${email} password: ${password}`);
     const newUser = {
       email: this.state.email,
       password: this.state.password,
       firstName: this.state.firstName,
       lastName: this.state.lastName
     };
-    axios.post("/api/user/register", newUser).then(response => {
-      console.log(response);
+    axios.post("/api/user/register", newUser)
+    .then(response => {
+      console.log(response)
+      this.props.history.push('/Login');;
     });
   };
 
