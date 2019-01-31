@@ -1,7 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Amichi app connects service providers with those seeking services.  Rather than just connect services, howerever, Amici also schedules and provides payment service options.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -20,9 +20,37 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@date-io/date-fns": "^1.0.1",
+    "@material-ui/core": "^3.9.0",
+    "@mdi/js": "^3.4.93",
+    "@mdi/react": "^1.1.0",
     "axios": "^0.18.0",
-    "express": "^4.16.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "date-fns": "2.0.0-alpha.25",
+    "express": "^4.16.4",
+    "iatacodes": "^7.0.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
-  }
+    "material-ui-custom-datepicker": "^1.0.33",
+    "material-ui-pickers": "^2.1.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.3.16",
+    "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
+    "react": "^16.7.0",
+    "react-dates": "^18.4.1",
+    "react-dom": "^16.7.0",
+    "react-google-autocomplete": "^1.0.18",
+    "react-google-maps": "^9.4.5",
+    "react-load-script": "0.0.6",
+    "react-scripts": "2.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-512/Amicis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Code-512/Amicis/issues"
+  },
+  "homepage": "https://github.com/Code-512/Amicis#readme"
 }

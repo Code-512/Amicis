@@ -1,28 +1,26 @@
-# Amicis
+# TripAroundV2.0
 
-The Amichi app connects service providers with those seeking services.  Rather than just connect services, howerever, Amici also schedules and provides payment service options. 
+The TripAround app allows you to be able to find the cheapest price between either flying or driving to a desired destination. If you enter where ya going and where ya starting it will calculate the route on the way whilst also providing gas stations and flights.
+
+[Link to the site] - (https://amicis-bo.herokuapp.com/)
 
 ### TECHNOLOGY/ FRAMEWORKS USED ###
 + HTML5
 + CSS3
-+ Javascript
-+ AJAX
-+ [Paypal](https://www.paypal.com/us/home)
++ [Javascript](https://www.javascript.com)
++ Axios
++ [Bootstrap 4](https://getbootstrap.com/)
 + [Node.js](https://nodejs.org/en/)
-+ [MySQL](https://www.mysql.com/)
 + [React JS](https://reactjs.org/)
-+ [AuthO](https://auth0.com/)
 + [Google Maps Platforms](https://cloud.google.com/maps-platform/maps/)
++ [My Gas Feed API](http://www.mygasfeed.com/keys/intro)
++ [Skypicker API](https://skypickerpublicapi.docs.apiary.io/#)
++ [MongoDB](https://www.mongodb.com/)
 
 ### MVP USER FLOW ###
-Upon landing on Amicis, the user must create or login to their existing account.  From there, the user will decide to choose a service or provide a service.  If the user chooses to provide a service they may choose a service from a drop down window or enter a new service.  Service providers may also choose to check their calendars for existing user scheduled events. 
-If the user is seeking a service, they many choose from a drop down list of available vendors, then schedule through the calendar function.  
-Both service providers and service seekers will be able to see previous services from their account login screens. 
+Upon landing on TripAround, the user must create or login to their existing account.  From there, the user will be redirected to the pan trip page. The user what will enter where they are starting and where they are going and route will be calcuated showing both gas stations and flights they can potentially take. Users will then be able to choose what the most cost effective travel option to take for their trip will be!
 
-### NICE TO HAVE ###
-+ Service providers may sync their Amicis calendar with their Google calendar. 
-+ Service seekers could recieve recommendations for future services based upon past services. 
-+ Service seekers and service providers could receive ratings based upon their experiences. 
-+ Background checks for service providers. 
-+ Service seekers may suggest a service needed. 
-+ Service providers will be able to review their ratings and modify their profiles. 
+### Developers ###
+ * Julie Wilmer - Full Stack Developer
+ * Jared Harris - Full-Stack Developer
+ * Bo Rosales- Full-Stack Developer
