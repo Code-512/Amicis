@@ -32,7 +32,7 @@ class NavAboutLogin extends Component {
               <MDBNavLink to="/">About</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/Login">Login</MDBNavLink>
+              <MDBNavLink to="/login">Login</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
