@@ -33,8 +33,8 @@ class Login extends React.Component {
       })
       .then(response => {
         console.log(response.data[0]);
-        this.setState({ userDetails: response.data[0] });
-        console.log(response);
+        this.setState({ userDetails: response.data[0] })
+        this.props.history.push('/plan');
       })
       .catch(error => {
         console.log(error);

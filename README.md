@@ -8,7 +8,7 @@ The TripAround app allows you to be able to find the cheapest price between eith
 + HTML5
 + CSS3
 + [Javascript](https://www.javascript.com)
-+ AJAX
++ Axios
 + [Bootstrap 4](https://getbootstrap.com/)
 + [Node.js](https://nodejs.org/en/)
 + [React JS](https://reactjs.org/)
