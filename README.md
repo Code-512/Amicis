@@ -1,8 +1,6 @@
 # TripAroundV2.0
 
-The TripAround app allows you to be able to find the cheapest price between either flying or driving to a desired destination. If you enter where ya going and where ya starting it will calculate the route on the way whilst also providing gas stations and flights.
-
-[Link to the site] - (https://amicis-bo.herokuapp.com/)
+The [TripAround app](https://amicis-bo.herokuapp.com/) allows you to be able to find the cheapest price between either flying or driving to a desired destination. If you enter where ya going and where ya starting it will calculate the route on the way whilst also providing gas stations and flights.
 
 ### TECHNOLOGY/ FRAMEWORKS USED ###
 + HTML5
@@ -21,6 +19,9 @@ The TripAround app allows you to be able to find the cheapest price between eith
 Upon landing on TripAround, the user must create or login to their existing account.  From there, the user will be redirected to the pan trip page. The user what will enter where they are starting and where they are going and route will be calcuated showing both gas stations and flights they can potentially take. Users will then be able to choose what the most cost effective travel option to take for their trip will be!
 
 ### Developers ###
- * Julie Wilmer - Full Stack Developer
+ * Julie Wilmer - Team Lead, Full-Stack Developer
  * Jared Harris - Full-Stack Developer
  * Bo Rosales- Full-Stack Developer
+
+### Sneak Peek ###
+[Plan Trip Page Screenshot](plan-trip-screenshot.png)
